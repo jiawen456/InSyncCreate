@@ -310,7 +310,7 @@ module processor_2 (
     case (M_state_q)
       IDLE_state: begin
         out = 25'h0000000;
-        if (M_enter_btn_out) begin
+        if (M_start_btn_out) begin
           M_state_d = CREATE_SELECT_state;
         end
       end
@@ -327,6 +327,9 @@ module processor_2 (
         if (M_enter_btn_out) begin
           M_state_d = GAME_SELECT_state;
         end
+        if (M_start_btn_out) begin
+          M_state_d = IDLE_state;
+        end
       end
       GAME_SELECT_state: begin
         if (M_up_btn_out || M_down_btn_out || M_left_btn_out || M_right_btn_out) begin
@@ -341,6 +344,9 @@ module processor_2 (
         if (M_enter_btn_out) begin
           M_state_d = MASK_SELECT_state;
         end
+        if (M_start_btn_out) begin
+          M_state_d = IDLE_state;
+        end
       end
       MASK_SELECT_state: begin
         if (M_up_btn_out || M_down_btn_out || M_left_btn_out || M_right_btn_out) begin
@@ -354,6 +360,9 @@ module processor_2 (
         end
         if (M_enter_btn_out) begin
           M_state_d = GEN_MAP_state;
+        end
+        if (M_start_btn_out) begin
+          M_state_d = IDLE_state;
         end
       end
       GEN_MAP_state: begin

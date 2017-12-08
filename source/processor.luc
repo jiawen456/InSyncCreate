@@ -151,10 +151,9 @@ module processor (
     case(state.q) {
       
       state.IDLE:
-        
-        // change back to start_btn !!!!!!
+
         out = 25b0;
-        if (enter_btn.out) {
+        if (start_btn.out) {
           state.d = state.CREATE_SELECT;
         }
       
@@ -169,12 +168,15 @@ module processor (
         }
         
         if (create_type.q == 1) {
-          out = 25b00011010110000001000100;
-          
+          out = 25b00011010110000001000100;    
         }
         
         if (enter_btn.out) {
           state.d = state.GAME_SELECT;
+        }
+        
+        if (start_btn.out) {
+          state.d = state.IDLE;
         }
       
       state.GAME_SELECT:
@@ -194,6 +196,10 @@ module processor (
         if (enter_btn.out) {
           state.d = state.MASK_SELECT;
         }
+        
+        if (start_btn.out) {
+          state.d = state.IDLE;
+        }
       
       state.MASK_SELECT:
         
@@ -211,6 +217,10 @@ module processor (
         
         if (enter_btn.out) {
           state.d = state.GEN_MAP;
+        }
+        
+        if (start_btn.out) {
+          state.d = state.IDLE;
         }
       
       state.GEN_MAP:
@@ -345,12 +355,10 @@ module processor (
           state.d = state.IDLE;
         }
         
-        // change back to reset_btn
         if (reset_btn.out) {
           state.d = state.RESET;
         }
         
-        // after some time, if player did not reset, reset by itself
         if (reset_ctr.value == 15) {
           state.d = state.IDLE;
         }

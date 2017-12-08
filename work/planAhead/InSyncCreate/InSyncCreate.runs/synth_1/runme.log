@@ -163,7 +163,7 @@ Synthesizing Unit <processor_2>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 11                                             |
-    | Transitions        | 29                                             |
+    | Transitions        | 32                                             |
     | Inputs             | 12                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
@@ -175,8 +175,8 @@ Synthesizing Unit <processor_2>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 25-bit adder for signal <M_blink_d> created at line 294.
-    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_44_OUT> created at line 432.
-    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_56_o> created at line 452
+    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_47_OUT> created at line 441.
+    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_59_o> created at line 461
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 171 D-type flip-flop(s).
@@ -926,8 +926,8 @@ INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_7> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_11> <processor/toggle_map/get_neighbours/M_up_temp_q_7> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_8> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_12> <processor/toggle_map/get_neighbours/M_up_temp_q_8> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_9> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_13> <processor/toggle_map/get_neighbours/M_up_temp_q_9> 
-INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_0> 
-INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_3> 
+INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_1> 
+INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_left_temp_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_5> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ur_temp_q_0> <processor/toggle_map/get_neighbours/M_left_temp_q_5> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_6> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ur_temp_q_1> <processor/toggle_map/get_neighbours/M_left_temp_q_6> 
@@ -979,13 +979,13 @@ INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 39.
-FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_0 has been replicated 4 time(s)
-FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_3 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_1 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_2 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_4 has been replicated 4 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_1 has been replicated 4 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_4 has been replicated 4 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_0 has been replicated 5 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_2 has been replicated 4 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_3 has been replicated 4 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_0 has been replicated 7 time(s)
-FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 6 time(s)
+FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 2 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_2 has been replicated 4 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_3 has been replicated 2 time(s)
 
@@ -1006,8 +1006,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 752
- Flip-Flops                                            : 752
+# Registers                                            : 746
+ Flip-Flops                                            : 746
 # Shift Registers                                      : 7
  2-bit shift register                                  : 7
 
@@ -1033,7 +1033,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 766   |
+clk                                | BUFGP                  | 760   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1044,9 +1044,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 15.620ns (Maximum Frequency: 64.021MHz)
+   Minimum period: 15.862ns (Maximum Frequency: 63.043MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 15.368ns
+   Maximum output required time after clock: 15.431ns
    Maximum combinational path delay: No path found
 
 =========================================================================

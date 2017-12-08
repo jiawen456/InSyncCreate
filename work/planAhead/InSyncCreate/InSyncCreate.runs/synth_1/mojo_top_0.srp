@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -209,7 +209,7 @@ Synthesizing Unit <processor_2>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 11                                             |
-    | Transitions        | 29                                             |
+    | Transitions        | 32                                             |
     | Inputs             | 12                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
@@ -221,8 +221,8 @@ Synthesizing Unit <processor_2>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 25-bit adder for signal <M_blink_d> created at line 294.
-    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_44_OUT> created at line 432.
-    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_56_o> created at line 452
+    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_47_OUT> created at line 441.
+    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_59_o> created at line 461
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 171 D-type flip-flop(s).
@@ -972,8 +972,8 @@ INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_7> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_11> <processor/toggle_map/get_neighbours/M_up_temp_q_7> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_8> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_12> <processor/toggle_map/get_neighbours/M_up_temp_q_8> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_9> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_13> <processor/toggle_map/get_neighbours/M_up_temp_q_9> 
-INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_0> 
-INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_3> 
+INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_1> 
+INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_left_temp_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_5> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ur_temp_q_0> <processor/toggle_map/get_neighbours/M_left_temp_q_5> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_6> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ur_temp_q_1> <processor/toggle_map/get_neighbours/M_left_temp_q_6> 
@@ -1025,13 +1025,13 @@ INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 39.
-FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_0 has been replicated 4 time(s)
-FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_3 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_1 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_2 has been replicated 5 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_4 has been replicated 4 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_1 has been replicated 4 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_4 has been replicated 4 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_0 has been replicated 5 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_2 has been replicated 4 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_3 has been replicated 4 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_0 has been replicated 7 time(s)
-FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 6 time(s)
+FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 2 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_2 has been replicated 4 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_3 has been replicated 2 time(s)
 
@@ -1052,8 +1052,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 752
- Flip-Flops                                            : 752
+# Registers                                            : 746
+ Flip-Flops                                            : 746
 # Shift Registers                                      : 7
  2-bit shift register                                  : 7
 
@@ -1078,23 +1078,23 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2901
+# BELS                             : 2886
 #      GND                         : 21
 #      INV                         : 21
 #      LUT1                        : 209
-#      LUT2                        : 240
-#      LUT3                        : 127
-#      LUT4                        : 196
-#      LUT5                        : 326
-#      LUT6                        : 611
+#      LUT2                        : 241
+#      LUT3                        : 125
+#      LUT4                        : 193
+#      LUT5                        : 321
+#      LUT6                        : 609
 #      MUXCY                       : 547
-#      MUXF7                       : 29
+#      MUXF7                       : 25
 #      VCC                         : 20
 #      XORCY                       : 554
-# FlipFlops/Latches                : 759
+# FlipFlops/Latches                : 753
 #      FD                          : 7
 #      FDE                         : 7
-#      FDR                         : 115
+#      FDR                         : 109
 #      FDRE                        : 624
 #      FDS                         : 4
 #      FDSE                        : 2
@@ -1114,17 +1114,17 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             759  out of  11440     6%  
- Number of Slice LUTs:                 1737  out of   5720    30%  
-    Number used as Logic:              1730  out of   5720    30%  
+ Number of Slice Registers:             753  out of  11440     6%  
+ Number of Slice LUTs:                 1726  out of   5720    30%  
+    Number used as Logic:              1719  out of   5720    30%  
     Number used as Memory:                7  out of   1440     0%  
        Number used as SRL:                7
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2234
-   Number with an unused Flip Flop:    1475  out of   2234    66%  
-   Number with an unused LUT:           497  out of   2234    22%  
-   Number of fully used LUT-FF pairs:   262  out of   2234    11%  
+ Number of LUT Flip Flop pairs used:   2211
+   Number with an unused Flip Flop:    1458  out of   2211    65%  
+   Number with an unused LUT:           485  out of   2211    21%  
+   Number of fully used LUT-FF pairs:   268  out of   2211    12%  
    Number of unique control sets:        53
 
 IO Utilization: 
@@ -1155,7 +1155,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 766   |
+clk                                | BUFGP                  | 760   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1166,9 +1166,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 15.620ns (Maximum Frequency: 64.021MHz)
+   Minimum period: 15.862ns (Maximum Frequency: 63.043MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 15.368ns
+   Maximum output required time after clock: 15.431ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1177,35 +1177,45 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 15.620ns (frequency: 64.021MHz)
-  Total number of paths / destination ports: 26529002003 / 2125
+  Clock period: 15.862ns (frequency: 63.043MHz)
+  Total number of paths / destination ports: 26835419557 / 2113
 -------------------------------------------------------------------------
-Delay:               15.620ns (Levels of Logic = 25)
-  Source:            processor/toggle_map/get_neighbours/M_cursor_position_q_1_1 (FF)
+Delay:               15.862ns (Levels of Logic = 35)
+  Source:            processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
   Destination:       processor/toggle_map/M_out_temp_x_q_24 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: processor/toggle_map/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_24
+  Data Path: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             12   0.525   1.499  M_cursor_position_q_1_1 (M_cursor_position_q_1_1)
-     LUT5:I0->O            8   0.254   0.944  _n00871_1 (_n00871)
-     end scope: 'processor/toggle_map/get_neighbours:_n00871'
-     LUT3:I2->O            1   0.254   0.790  M_ctr_q<3>_720_SW2 (N142)
-     LUT6:I4->O            1   0.250   0.000  M_ctr_q<3>_720 (M_ctr_q<3>_720)
-     MUXF7:I0->O          29   0.163   1.470  M_ctr_q<3>_5_f7_19 (M_ctr_q<3>_5_f720)
-     LUT6:I5->O           11   0.254   1.039  M_ctr_q<3>21 (M_alu_b<6>)
-     begin scope: 'processor/toggle_map/alu:b<6>'
-     begin scope: 'processor/toggle_map/alu/adder:b<6>'
-     LUT4:I3->O            1   0.254   0.000  Mmult_n0032_Madd4_lut<5> (Mmult_n0032_Madd4_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  Mmult_n0032_Madd4_cy<5> (Mmult_n0032_Madd4_cy<5>)
-     XORCY:CI->O           1   0.206   0.682  Mmult_n0032_Madd4_xor<6> (Mmult_n0032_Madd_217)
-     LUT2:I1->O            1   0.254   0.000  Mmult_n0032_Madd13_lut<8> (Mmult_n0032_Madd13_lut<8>)
-     XORCY:LI->O           1   0.149   0.790  Mmult_n0032_Madd13_xor<8> (Mmult_n0032_Madd_2117)
-     LUT2:I0->O            1   0.250   0.000  Mmult_n0032_Madd18_lut<8> (Mmult_n0032_Madd18_lut<8>)
-     XORCY:LI->O           1   0.149   0.790  Mmult_n0032_Madd18_xor<8> (Mmult_n0032_Madd_2122)
+     FDR:C->Q              6   0.525   1.306  M_cursor_position_q_0_1 (M_cursor_position_q_0_1)
+     LUT5:I0->O           21   0.254   1.310  _n00851 (_n0085)
+     end scope: 'processor/toggle_map/get_neighbours:_n0085'
+     LUT5:I4->O            1   0.254   0.910  M_ctr_q<3>_721_SW1 (N145)
+     LUT6:I3->O            2   0.235   0.726  M_ctr_q<3>_721 (M_ctr_q<3>_721)
+     LUT6:I5->O           19   0.254   1.261  M_ctr_q<3>22 (M_alu_b<7>)
+     begin scope: 'processor/toggle_map/alu:b<7>'
+     begin scope: 'processor/toggle_map/alu/adder:b<7>'
+     LUT6:I5->O            1   0.254   0.000  Mmult_n0032_Madd9_lut<4> (Mmult_n0032_Madd9_lut<4>)
+     MUXCY:S->O            1   0.215   0.000  Mmult_n0032_Madd9_cy<4> (Mmult_n0032_Madd9_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<5> (Mmult_n0032_Madd9_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<6> (Mmult_n0032_Madd9_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<7> (Mmult_n0032_Madd9_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<8> (Mmult_n0032_Madd9_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<9> (Mmult_n0032_Madd9_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<10> (Mmult_n0032_Madd9_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<11> (Mmult_n0032_Madd9_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<12> (Mmult_n0032_Madd9_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Mmult_n0032_Madd9_cy<13> (Mmult_n0032_Madd9_cy<13>)
+     XORCY:CI->O           1   0.206   0.682  Mmult_n0032_Madd9_xor<14> (Mmult_n0032_Madd_199)
+     LUT2:I1->O            1   0.254   0.000  Mmult_n0032_Madd15_lut<14> (Mmult_n0032_Madd15_lut<14>)
+     MUXCY:S->O            1   0.215   0.000  Mmult_n0032_Madd15_cy<14> (Mmult_n0032_Madd15_cy<14>)
+     XORCY:CI->O           1   0.206   0.682  Mmult_n0032_Madd15_xor<15> (Mmult_n0032_Madd_2015)
+     LUT2:I1->O            1   0.254   0.000  Mmult_n0032_Madd19_lut<15> (Mmult_n0032_Madd19_lut<15>)
+     MUXCY:S->O            1   0.215   0.000  Mmult_n0032_Madd19_cy<15> (Mmult_n0032_Madd19_cy<15>)
+     XORCY:CI->O           1   0.206   0.790  Mmult_n0032_Madd19_xor<16> (Mmult_n0032_Madd_2123)
      LUT2:I0->O            1   0.250   0.000  Mmult_n0032_Madd21_lut<16> (Mmult_n0032_Madd21_lut<16>)
      MUXCY:S->O            1   0.215   0.000  Mmult_n0032_Madd21_cy<16> (Mmult_n0032_Madd21_cy<16>)
      XORCY:CI->O           1   0.206   0.682  Mmult_n0032_Madd21_xor<17> (Mmult_n0032_Madd_2223)
@@ -1220,8 +1230,8 @@ Delay:               15.620ns (Levels of Logic = 25)
      end scope: 'processor/toggle_map/alu:out<24>'
      FDRE:D                    0.074          M_mask4_q_24
     ----------------------------------------
-    Total                     15.620ns (5.526ns logic, 10.094ns route)
-                                       (35.4% logic, 64.6% route)
+    Total                     15.862ns (6.105ns logic, 9.757ns route)
+                                       (38.5% logic, 61.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -1246,33 +1256,33 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 24916 / 37
+  Total number of paths / destination ports: 24894 / 37
 -------------------------------------------------------------------------
-Offset:              15.368ns (Levels of Logic = 11)
+Offset:              15.431ns (Levels of Logic = 11)
   Source:            processor/M_out_temp_q_20 (FF)
-  Destination:       io_led<12> (PAD)
+  Destination:       io_led<19> (PAD)
   Source Clock:      clk rising
 
-  Data Path: processor/M_out_temp_q_20 to io_led<12>
+  Data Path: processor/M_out_temp_q_20 to io_led<19>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             5   0.525   1.296  M_out_temp_q_20 (M_out_temp_q<20>)
      begin scope: 'processor/get_position:cursor<20>'
-     LUT6:I0->O            3   0.254   1.042  pos<3>111 (pos<3>11)
-     LUT6:I2->O            5   0.254   1.296  pos<3>11 (pos<3>1)
+     LUT6:I0->O            3   0.254   1.196  pos<3>111 (pos<3>11)
+     LUT6:I1->O            5   0.254   1.296  pos<3>11 (pos<3>1)
      LUT6:I0->O            1   0.254   1.112  pos<2>1 (pos<2>_0)
-     LUT6:I1->O            1   0.254   1.112  pos<2>2 (pos<2>2)
-     LUT6:I1->O            7   0.254   1.340  pos<2>3 (pos<3>)
+     LUT6:I1->O            1   0.254   1.137  pos<2>2 (pos<2>2)
+     LUT6:I0->O            7   0.254   1.340  pos<2>3 (pos<3>)
      end scope: 'processor/get_position:pos<3>'
-     LUT5:I0->O            4   0.254   0.912  M_get_position_pos[4]_Decoder_35_OUT<12><4>11 (M_get_position_pos[4]_Decoder_35_OUT<12><4>1)
-     LUT6:I4->O            1   0.250   1.112  Mmux_out71 (Mmux_out7)
-     LUT6:I1->O            1   0.254   0.681  Mmux_out72 (out<12>)
-     end scope: 'processor:out<12>'
-     OBUF:I->O                 2.912          io_led_12_OBUF (io_led<12>)
+     LUT5:I0->O            4   0.254   1.032  M_get_position_pos[4]_Decoder_38_OUT<16><4>11 (M_get_position_pos[4]_Decoder_38_OUT<16><4>1)
+     LUT6:I3->O            1   0.235   0.910  Mmux_out201 (Mmux_out20)
+     LUT6:I3->O            1   0.235   0.681  Mmux_out202 (out<19>)
+     end scope: 'processor:out<19>'
+     OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
     ----------------------------------------
-    Total                     15.368ns (5.465ns logic, 9.903ns route)
-                                       (35.6% logic, 64.4% route)
+    Total                     15.431ns (5.431ns logic, 10.000ns route)
+                                       (35.2% logic, 64.8% route)
 
 =========================================================================
 
@@ -1284,18 +1294,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   15.620|         |         |         |
+clk            |   15.862|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 43.00 secs
-Total CPU time to Xst completion: 42.87 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.08 secs
  
 --> 
 
-Total memory usage is 381428 kilobytes
+Total memory usage is 381300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   78 (   0 filtered)

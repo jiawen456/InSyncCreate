@@ -1,0 +1,2452 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -o
+mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd mojo_top_0.pcf
+
+Design file:              mojo_top_0_routed.ncd
+Physical constraint file: mojo_top_0.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 26835419550 paths analyzed, 3194 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.411ns.
+--------------------------------------------------------------------------------
+Slack:                  0.589ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.370ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.370ns (5.480ns logic, 13.890ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.604ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.362ns (Levels of Logic = 11)
+  Clock Path Skew:      0.001ns (0.619 - 0.618)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_out_temp_x_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.CMUX    Topcc                 0.495   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y39.B4      net (fanout=1)        1.014   processor/toggle_map/alu/adder/n0032[21]
+    SLICE_X12Y39.BMUX    Topbb                 0.464   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<21>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X15Y42.B6      net (fanout=1)        0.856   processor/toggle_map/alu/M_adder_out[21]
+    SLICE_X15Y42.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[23]
+                                                       processor/toggle_map/alu/Mmux_out141
+    SLICE_X11Y41.DX      net (fanout=9)        1.196   processor/toggle_map/M_alu_out[21]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                     19.362ns (4.510ns logic, 14.852ns route)
+                                                       (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.629ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.330ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.330ns (5.440ns logic, 13.890ns route)
+                                                       (28.1% logic, 71.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.632ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.327ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.327ns (5.579ns logic, 13.748ns route)
+                                                       (28.9% logic, 71.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.649ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.310ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X17Y39.D5      net (fanout=3)        1.016   processor/toggle_map/N460
+    SLICE_X17Y39.D       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_2
+    SLICE_X22Y36.C6      net (fanout=10)       0.937   processor/toggle_map/M_ctr_q<3>_5_f7_211
+    SLICE_X22Y36.C       Tilo                  0.235   processor/toggle_map/M_mask4_x_q[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<2>_x_b<8>_mand1
+    SLICE_X20Y36.CX      net (fanout=1)        0.504   processor/toggle_map/alu/adder/Mmult_n0032_a<2>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Tcxd                  0.333   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.310ns (5.098ns logic, 14.212ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.662ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask1_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.289ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.014ns (0.292 - 0.306)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_mask1_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.CMUX    Topcc                 0.495   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y39.B4      net (fanout=1)        1.014   processor/toggle_map/alu/adder/n0032[21]
+    SLICE_X12Y39.COUT    Topcyb                0.483   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<21>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X12Y40.CIN     net (fanout=1)        0.082   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+    SLICE_X12Y40.AMUX    Tcina                 0.220   processor/toggle_map/M_mask4_q[12]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_xor<24>
+    SLICE_X15Y41.C5      net (fanout=1)        0.461   processor/toggle_map/alu/M_adder_out[24]
+    SLICE_X15Y41.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[23]
+                                                       processor/toggle_map/alu/Mmux_out171
+    SLICE_X15Y43.DX      net (fanout=10)       1.197   processor/toggle_map/M_alu_out[24]
+    SLICE_X15Y43.CLK     Tdick                 0.114   processor/toggle_map/M_mask1_q[24]
+                                                       processor/toggle_map/M_mask1_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.289ns (4.749ns logic, 14.540ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.672ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.287ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.287ns (5.539ns logic, 13.748ns route)
+                                                       (28.7% logic, 71.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.676ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.283ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X23Y40.B1      net (fanout=3)        0.923   processor/toggle_map/N460
+    SLICE_X23Y40.B       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21
+    SLICE_X23Y39.C6      net (fanout=14)       0.421   processor/toggle_map/M_ctr_q<3>_5_f722
+    SLICE_X23Y39.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[14]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.AX      net (fanout=1)        0.957   processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Taxd                  0.438   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.283ns (5.227ns logic, 14.056ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.677ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.282ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X17Y39.D5      net (fanout=3)        1.016   processor/toggle_map/N460
+    SLICE_X17Y39.D       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_2
+    SLICE_X17Y39.C6      net (fanout=10)       0.176   processor/toggle_map/M_ctr_q<3>_5_f7_211
+    SLICE_X17Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.BX      net (fanout=1)        1.143   processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Tbxd                  0.403   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.282ns (5.192ns logic, 14.090ns route)
+                                                       (26.9% logic, 73.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.681ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask3_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.266ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.018ns (0.295 - 0.313)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_mask3_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X17Y35.DX      net (fanout=10)       1.538   processor/toggle_map/M_alu_out[18]
+    SLICE_X17Y35.CLK     Tdick                 0.114   processor/toggle_map/M_mask3_x_q[18]
+                                                       processor/toggle_map/M_mask3_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.266ns (5.480ns logic, 13.786ns route)
+                                                       (28.4% logic, 71.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.682ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask1_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.269ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.014ns (0.292 - 0.306)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_mask1_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.COUT    Topcyc                0.328   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X16Y45.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy[22]
+    SLICE_X16Y45.AMUX    Tcina                 0.220   processor/M_down_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_xor<24>
+    SLICE_X12Y39.D3      net (fanout=1)        1.078   processor/toggle_map/alu/adder/n0032[23]
+    SLICE_X12Y39.COUT    Topcyd                0.343   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A161
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X12Y40.CIN     net (fanout=1)        0.082   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+    SLICE_X12Y40.AMUX    Tcina                 0.220   processor/toggle_map/M_mask4_q[12]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_xor<24>
+    SLICE_X15Y41.C5      net (fanout=1)        0.461   processor/toggle_map/alu/M_adder_out[24]
+    SLICE_X15Y41.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[23]
+                                                       processor/toggle_map/alu/Mmux_out171
+    SLICE_X15Y43.DX      net (fanout=10)       1.197   processor/toggle_map/M_alu_out[24]
+    SLICE_X15Y43.CLK     Tdick                 0.114   processor/toggle_map/M_mask1_q[24]
+                                                       processor/toggle_map/M_mask1_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.269ns (4.662ns logic, 14.607ns route)
+                                                       (24.2% logic, 75.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.689ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.270ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X17Y39.D5      net (fanout=3)        1.016   processor/toggle_map/N460
+    SLICE_X17Y39.D       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_2
+    SLICE_X22Y36.C6      net (fanout=10)       0.937   processor/toggle_map/M_ctr_q<3>_5_f7_211
+    SLICE_X22Y36.C       Tilo                  0.235   processor/toggle_map/M_mask4_x_q[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<2>_x_b<8>_mand1
+    SLICE_X20Y36.CX      net (fanout=1)        0.504   processor/toggle_map/alu/adder/Mmult_n0032_a<2>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Tcxd                  0.333   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.270ns (5.058ns logic, 14.212ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.694ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/M_current_map_q_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.244ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.027ns (0.314 - 0.341)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/M_current_map_q_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y34.BQ       Tcko                  0.430   processor/M_current_map_q[1]
+                                                       processor/M_current_map_q_1
+    SLICE_X16Y34.D2      net (fanout=5)        1.549   processor/M_current_map_q[1]
+    SLICE_X16Y34.D       Tilo                  0.254   processor/toggle_map/M_mask3_x_q[1]
+                                                       processor/toggle_map/Mmux_M_alu_a241
+    SLICE_X11Y34.A6      net (fanout=1)        0.889   processor/toggle_map/Mmux_M_alu_a24
+    SLICE_X11Y34.A       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[7]
+                                                       processor/toggle_map/Mmux_M_alu_a245
+    SLICE_X17Y39.C3      net (fanout=36)       1.308   processor/toggle_map/M_alu_a[1]
+    SLICE_X17Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.BX      net (fanout=1)        1.143   processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Tbxd                  0.403   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.244ns (4.840ns logic, 14.404ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.696ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.274ns (Levels of Logic = 11)
+  Clock Path Skew:      0.005ns (0.623 - 0.618)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_out_temp_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.CMUX    Topcc                 0.495   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y39.B4      net (fanout=1)        1.014   processor/toggle_map/alu/adder/n0032[21]
+    SLICE_X12Y39.BMUX    Topbb                 0.464   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<21>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X15Y42.B6      net (fanout=1)        0.856   processor/toggle_map/alu/M_adder_out[21]
+    SLICE_X15Y42.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[23]
+                                                       processor/toggle_map/alu/Mmux_out141
+    SLICE_X9Y42.BX       net (fanout=9)        1.108   processor/toggle_map/M_alu_out[21]
+    SLICE_X9Y42.CLK      Tdick                 0.114   processor/M_out_temp_q_21
+                                                       processor/toggle_map/M_out_temp_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                     19.274ns (4.510ns logic, 14.764ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.699ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask4_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.252ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.014ns (0.192 - 0.206)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_mask4_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X19Y43.CX      net (fanout=10)       1.524   processor/toggle_map/M_alu_out[18]
+    SLICE_X19Y43.CLK     Tdick                 0.114   processor/toggle_map/M_mask4_x_q[19]
+                                                       processor/toggle_map/M_mask4_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.252ns (5.480ns logic, 13.772ns route)
+                                                       (28.5% logic, 71.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.700ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_2_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.260ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.005ns (0.619 - 0.624)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_2_1 to processor/toggle_map/M_out_temp_x_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y35.DQ      Tcko                  0.476   M_ctr_q_2_1
+                                                       seven_seg_ctr/M_ctr_q_2_1
+    SLICE_X20Y31.D4      net (fanout=18)       1.709   M_ctr_q_2_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.CMUX    Topcc                 0.495   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y39.B4      net (fanout=1)        1.014   processor/toggle_map/alu/adder/n0032[21]
+    SLICE_X12Y39.BMUX    Topbb                 0.464   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<21>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X15Y42.B6      net (fanout=1)        0.856   processor/toggle_map/alu/M_adder_out[21]
+    SLICE_X15Y42.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[23]
+                                                       processor/toggle_map/alu/Mmux_out141
+    SLICE_X11Y41.DX      net (fanout=9)        1.196   processor/toggle_map/M_alu_out[21]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                     19.260ns (4.510ns logic, 14.750ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.701ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.258ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.AX      net (fanout=2)        2.408   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Taxcy                 0.248   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.258ns (5.254ns logic, 14.004ns route)
+                                                       (27.3% logic, 72.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.702ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.257ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X17Y39.D5      net (fanout=3)        1.016   processor/toggle_map/N460
+    SLICE_X17Y39.D       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_2
+    SLICE_X17Y39.C6      net (fanout=10)       0.176   processor/toggle_map/M_ctr_q<3>_5_f7_211
+    SLICE_X17Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.BX      net (fanout=1)        1.143   processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.CMUX    Taxc                  0.376   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.257ns (5.309ns logic, 13.948ns route)
+                                                       (27.6% logic, 72.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.713ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask1_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.238ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.014ns (0.292 - 0.306)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_mask1_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.COUT    Topcyc                0.328   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X16Y45.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy[22]
+    SLICE_X16Y45.AMUX    Tcina                 0.220   processor/M_down_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_xor<24>
+    SLICE_X12Y39.D3      net (fanout=1)        1.078   processor/toggle_map/alu/adder/n0032[23]
+    SLICE_X12Y39.COUT    Topcyd                0.312   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<23>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X12Y40.CIN     net (fanout=1)        0.082   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+    SLICE_X12Y40.AMUX    Tcina                 0.220   processor/toggle_map/M_mask4_q[12]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_xor<24>
+    SLICE_X15Y41.C5      net (fanout=1)        0.461   processor/toggle_map/alu/M_adder_out[24]
+    SLICE_X15Y41.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[23]
+                                                       processor/toggle_map/alu/Mmux_out171
+    SLICE_X15Y43.DX      net (fanout=10)       1.197   processor/toggle_map/M_alu_out[24]
+    SLICE_X15Y43.CLK     Tdick                 0.114   processor/toggle_map/M_mask1_q[24]
+                                                       processor/toggle_map/M_mask1_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                     19.238ns (4.631ns logic, 14.607ns route)
+                                                       (24.1% logic, 75.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.716ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.243ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.DMUX    Topcd                 0.536   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.DX      net (fanout=2)        1.285   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1821
+    SLICE_X16Y43.COUT    Tdxcy                 0.109   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X16Y44.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy[18]
+    SLICE_X16Y44.AMUX    Tcina                 0.220   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y38.D3      net (fanout=1)        1.078   processor/toggle_map/alu/adder/n0032[19]
+    SLICE_X12Y38.COUT    Topcyd                0.343   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A111
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X12Y39.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+    SLICE_X12Y39.BMUX    Tcinb                 0.310   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X15Y42.B6      net (fanout=1)        0.856   processor/toggle_map/alu/M_adder_out[21]
+    SLICE_X15Y42.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[23]
+                                                       processor/toggle_map/alu/Mmux_out141
+    SLICE_X11Y41.DX      net (fanout=9)        1.196   processor/toggle_map/M_alu_out[21]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                     19.243ns (5.358ns logic, 13.885ns route)
+                                                       (27.8% logic, 72.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.716ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.243ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X23Y40.B1      net (fanout=3)        0.923   processor/toggle_map/N460
+    SLICE_X23Y40.B       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21
+    SLICE_X23Y39.C6      net (fanout=14)       0.421   processor/toggle_map/M_ctr_q<3>_5_f722
+    SLICE_X23Y39.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[14]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.AX      net (fanout=1)        0.957   processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Taxd                  0.438   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.243ns (5.187ns logic, 14.056ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.717ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.242ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X17Y39.D5      net (fanout=3)        1.016   processor/toggle_map/N460
+    SLICE_X17Y39.D       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_2
+    SLICE_X17Y39.C6      net (fanout=10)       0.176   processor/toggle_map/M_ctr_q<3>_5_f7_211
+    SLICE_X17Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.BX      net (fanout=1)        1.143   processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.DMUX    Tbxd                  0.403   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.242ns (5.152ns logic, 14.090ns route)
+                                                       (26.8% logic, 73.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.719ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/M_current_map_q_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.219ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.027ns (0.314 - 0.341)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/M_current_map_q_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y34.BQ       Tcko                  0.430   processor/M_current_map_q[1]
+                                                       processor/M_current_map_q_1
+    SLICE_X16Y34.D2      net (fanout=5)        1.549   processor/M_current_map_q[1]
+    SLICE_X16Y34.D       Tilo                  0.254   processor/toggle_map/M_mask3_x_q[1]
+                                                       processor/toggle_map/Mmux_M_alu_a241
+    SLICE_X11Y34.A6      net (fanout=1)        0.889   processor/toggle_map/Mmux_M_alu_a24
+    SLICE_X11Y34.A       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[7]
+                                                       processor/toggle_map/Mmux_M_alu_a245
+    SLICE_X17Y39.C3      net (fanout=36)       1.308   processor/toggle_map/M_alu_a[1]
+    SLICE_X17Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_q[11]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.BX      net (fanout=1)        1.143   processor/toggle_map/alu/adder/Mmult_n0032_a<1>_x_b<8>_mand1
+    SLICE_X20Y36.CMUX    Taxc                  0.376   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.219ns (4.957ns logic, 14.262ns route)
+                                                       (25.8% logic, 74.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.721ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask3_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.226ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.018ns (0.295 - 0.313)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_mask3_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.610   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_A91
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X17Y35.DX      net (fanout=10)       1.538   processor/toggle_map/M_alu_out[18]
+    SLICE_X17Y35.CLK     Tdick                 0.114   processor/toggle_map/M_mask3_x_q[18]
+                                                       processor/toggle_map/M_mask3_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.226ns (5.440ns logic, 13.786ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.721ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.238ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X19Y44.C2      net (fanout=7)        0.787   processor/M_cursor_position_q_1_1
+    SLICE_X19Y44.C       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/_n00891
+    SLICE_X21Y41.B2      net (fanout=22)       1.453   processor/toggle_map/_n0089
+    SLICE_X21Y41.B       Tilo                  0.259   processor/toggle_map/M_cursor_position_q_0_3
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21_SW0
+    SLICE_X23Y40.B1      net (fanout=3)        0.923   processor/toggle_map/N460
+    SLICE_X23Y40.B       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_21
+    SLICE_X23Y39.C6      net (fanout=14)       0.421   processor/toggle_map/M_ctr_q<3>_5_f722
+    SLICE_X23Y39.C       Tilo                  0.259   processor/toggle_map/M_mask1_q[14]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.AX      net (fanout=1)        0.957   processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<8>_mand1
+    SLICE_X20Y36.CMUX    Taxc                  0.391   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.238ns (5.324ns logic, 13.914ns route)
+                                                       (27.7% logic, 72.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.723ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seven_seg_ctr/M_ctr_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask3_x_q_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.226ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.016ns (0.290 - 0.306)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seven_seg_ctr/M_ctr_q_0_1 to processor/toggle_map/M_mask3_x_q_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.DQ      Tcko                  0.476   M_ctr_q_0_1
+                                                       seven_seg_ctr/M_ctr_q_0_1
+    SLICE_X20Y31.D2      net (fanout=17)       1.811   M_ctr_q_0_1
+    SLICE_X20Y31.D       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a44
+    SLICE_X20Y31.A1      net (fanout=2)        1.356   processor/toggle_map/Mmux_M_alu_a45
+    SLICE_X20Y31.A       Tilo                  0.254   processor/toggle_map/M_mask1_x_q[10]
+                                                       processor/toggle_map/Mmux_M_alu_a45_1
+    SLICE_X23Y40.A6      net (fanout=8)        0.961   processor/toggle_map/Mmux_M_alu_a451
+    SLICE_X23Y40.A       Tilo                  0.259   processor/M_left_temp_q_9
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.CX      net (fanout=1)        1.685   processor/toggle_map/alu/adder/Mmult_n0032_a<10>_x_b<8>_mand1
+    SLICE_X14Y42.COUT    Tcxcy                 0.134   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<6>
+    SLICE_X14Y43.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[6]
+    SLICE_X14Y43.AMUX    Tcina                 0.210   processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy[10]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd5_cy<10>
+    SLICE_X18Y29.D4      net (fanout=1)        2.146   processor/toggle_map/alu/adder/Mmult_n0032_Madd_205
+    SLICE_X18Y29.DMUX    Topdd                 0.446   processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy[7]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd13_cy<7>
+    SLICE_X20Y42.B6      net (fanout=1)        1.452   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2013
+    SLICE_X20Y42.CMUX    Topbc                 0.650   processor/toggle_map/M_mask4_q[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_lut<7>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd18_cy<9>
+    SLICE_X12Y42.C3      net (fanout=2)        1.331   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2122
+    SLICE_X12Y42.CMUX    Topcc                 0.495   processor/toggle_map/M_mask2_q[23]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<16>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<17>
+    SLICE_X16Y44.C1      net (fanout=2)        1.041   processor/toggle_map/alu/adder/Mmult_n0032_Madd_2125
+    SLICE_X16Y44.CMUX    Topcc                 0.495   processor/M_left_temp_q_15
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<21>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<22>
+    SLICE_X12Y39.B4      net (fanout=1)        1.014   processor/toggle_map/alu/adder/n0032[21]
+    SLICE_X12Y39.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[23]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<21>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<23>
+    SLICE_X14Y41.B6      net (fanout=1)        0.637   processor/toggle_map/alu/M_adder_out[22]
+    SLICE_X14Y41.B       Tilo                  0.235   processor/M_out_temp_q_23
+                                                       processor/toggle_map/alu/Mmux_out151
+    SLICE_X18Y42.B4      net (fanout=9)        0.903   processor/toggle_map/M_alu_out[22]
+    SLICE_X18Y42.CLK     Tas                   0.328   processor/toggle_map/M_mask3_x_q[20]
+                                                       processor/toggle_map/M_alu_out[22]_rt
+                                                       processor/toggle_map/M_mask3_x_q_22
+    -------------------------------------------------  ---------------------------
+    Total                                     19.226ns (4.886ns logic, 14.340ns route)
+                                                       (25.4% logic, 74.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.723ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_2 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.234ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.008ns (0.619 - 0.627)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_2 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y43.AQ      Tcko                  0.430   processor/toggle_map/M_cursor_position_q_0_2
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_2
+    SLICE_X12Y40.C1      net (fanout=12)       1.806   processor/toggle_map/M_cursor_position_q_0_2
+    SLICE_X12Y40.CMUX    Tilo                  0.430   processor/toggle_map/M_mask4_q[12]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_SW2_G
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7_SW2
+    SLICE_X21Y38.A2      net (fanout=1)        1.651   processor/toggle_map/N466
+    SLICE_X21Y38.A       Tilo                  0.259   processor/toggle_map/M_mask1_x_q[18]
+                                                       processor/toggle_map/M_ctr_q<3>_5_f7
+    SLICE_X21Y38.C2      net (fanout=21)       0.583   processor/toggle_map/M_ctr_q<3>_5_f7
+    SLICE_X21Y38.C       Tilo                  0.259   processor/toggle_map/M_mask1_x_q[18]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<10>_mand1
+    SLICE_X22Y37.AX      net (fanout=1)        0.715   processor/toggle_map/alu/adder/Mmult_n0032_a<0>_x_b<10>_mand1
+    SLICE_X22Y37.BMUX    Taxb                  0.310   processor/toggle_map/alu/adder/Mmult_n0032_Madd8_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd8_cy<6>
+    SLICE_X18Y41.C6      net (fanout=2)        1.142   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1112
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.234ns (4.923ns logic, 14.311ns route)
+                                                       (25.6% logic, 74.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.724ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_mask3_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.223ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.018ns (0.295 - 0.313)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_mask3_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.B6      net (fanout=1)        0.959   processor/toggle_map/alu/adder/Mmult_n0032_Madd_109
+    SLICE_X18Y41.CMUX    Topbc                 0.613   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<5>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X17Y35.DX      net (fanout=10)       1.538   processor/toggle_map/M_alu_out[18]
+    SLICE_X17Y35.CLK     Tdick                 0.114   processor/toggle_map/M_mask3_x_q[18]
+                                                       processor/toggle_map/M_mask3_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.223ns (5.579ns logic, 13.644ns route)
+                                                       (29.0% logic, 71.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.724ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.235ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.AMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1
+    SLICE_X16Y45.C5      net (fanout=7)        0.659   processor/M_cursor_position_q_1_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.DMUX    Topbd                 0.695   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.C5      net (fanout=1)        1.101   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1113
+    SLICE_X18Y41.CMUX    Topcc                 0.469   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.235ns (5.480ns logic, 13.755ns route)
+                                                       (28.5% logic, 71.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.725ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 (FF)
+  Destination:          processor/toggle_map/M_out_temp_x_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.234ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.006ns (0.619 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: processor/toggle_map/get_neighbours/M_cursor_position_q_0_1 to processor/toggle_map/M_out_temp_x_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y44.BMUX    Tshcko                0.518   processor/toggle_map/M_cursor_position_q_3_4
+                                                       processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C2      net (fanout=6)        0.794   processor/toggle_map/get_neighbours/M_cursor_position_q_0_1
+    SLICE_X16Y45.C       Tilo                  0.255   processor/M_down_temp_q_15
+                                                       processor/toggle_map/get_neighbours/_n00871_1
+    SLICE_X19Y39.C5      net (fanout=9)        0.954   processor/toggle_map/_n00871
+    SLICE_X19Y39.C       Tilo                  0.259   processor/toggle_map/M_mask4_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721_SW2
+    SLICE_X15Y38.B3      net (fanout=1)        0.854   processor/toggle_map/N146
+    SLICE_X15Y38.B       Tilo                  0.259   processor/toggle_map/M_mask2_x_q[11]
+                                                       processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B3      net (fanout=2)        0.584   processor/toggle_map/M_ctr_q<3>_721
+    SLICE_X17Y37.B       Tilo                  0.259   processor/toggle_map/M_mask2_q[10]
+                                                       processor/toggle_map/M_ctr_q<3>22
+    SLICE_X20Y36.B4      net (fanout=19)       1.189   processor/toggle_map/M_alu_b[7]
+    SLICE_X20Y36.BMUX    Topbb                 0.464   processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy[6]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_lut<4>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd9_cy<6>
+    SLICE_X18Y41.AX      net (fanout=2)        1.255   processor/toggle_map/alu/adder/Mmult_n0032_Madd_99
+    SLICE_X18Y41.CMUX    Taxc                  0.410   processor/toggle_map/M_mask2_x_q[24]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd15_cy<7>
+    SLICE_X16Y30.A1      net (fanout=2)        2.294   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1119
+    SLICE_X16Y30.COUT    Topcya                0.474   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_lut<6>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<9>
+    SLICE_X16Y31.CIN     net (fanout=1)        0.003   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[9]
+    SLICE_X16Y31.CMUX    Tcinc                 0.279   processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy[13]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd19_cy<13>
+    SLICE_X12Y41.C3      net (fanout=1)        1.691   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1719
+    SLICE_X12Y41.CMUX    Topcc                 0.495   processor/M_out_temp_q_20
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_lut<12>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd21_cy<13>
+    SLICE_X16Y43.C5      net (fanout=2)        0.911   processor/toggle_map/alu/adder/Mmult_n0032_Madd_1721
+    SLICE_X16Y43.CMUX    Topcc                 0.495   processor/toggle_map/M_mask3_x_q[19]
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_lut<17>
+                                                       processor/toggle_map/alu/adder/Mmult_n0032_Madd23_cy<18>
+    SLICE_X12Y38.B4      net (fanout=1)        1.005   processor/toggle_map/alu/adder/n0032[17]
+    SLICE_X12Y38.CMUX    Topbc                 0.650   processor/toggle_map/alu/adder/Mmux_s3_rs_cy[19]
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_lut<17>1
+                                                       processor/toggle_map/alu/adder/Mmux_s3_rs_cy<19>
+    SLICE_X17Y41.D3      net (fanout=1)        0.868   processor/toggle_map/alu/M_adder_out[18]
+    SLICE_X17Y41.D       Tilo                  0.259   processor/toggle_map/M_mask3_x_q[16]
+                                                       processor/toggle_map/alu/Mmux_out101
+    SLICE_X11Y41.CX      net (fanout=10)       1.642   processor/toggle_map/M_alu_out[18]
+    SLICE_X11Y41.CLK     Tdick                 0.114   processor/M_out_temp_x_q_21
+                                                       processor/toggle_map/M_out_temp_x_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                     19.234ns (5.190ns logic, 14.044ns route)
+                                                       (27.0% logic, 73.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/down_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/up_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/left_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/enter_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/start_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/reset_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.601ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: processor/right_btn_cond/M_sync_out/CLK
+  Logical resource: processor/right_btn_cond/sync/Mshreg_M_pipe_q_1/CLK
+  Location pin: SLICE_X8Y49.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[3]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_0/CK
+  Location pin: SLICE_X0Y36.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[3]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_1/CK
+  Location pin: SLICE_X0Y36.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[3]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_2/CK
+  Location pin: SLICE_X0Y36.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[3]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_3/CK
+  Location pin: SLICE_X0Y36.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[7]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_4/CK
+  Location pin: SLICE_X0Y37.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[7]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_5/CK
+  Location pin: SLICE_X0Y37.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[7]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_6/CK
+  Location pin: SLICE_X0Y37.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[7]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_7/CK
+  Location pin: SLICE_X0Y37.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[11]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_8/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[11]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_9/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[11]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_10/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[11]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_11/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[15]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_12/CK
+  Location pin: SLICE_X0Y39.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[15]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_13/CK
+  Location pin: SLICE_X0Y39.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[15]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_14/CK
+  Location pin: SLICE_X0Y39.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[15]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_15/CK
+  Location pin: SLICE_X0Y39.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[19]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_16/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[19]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_17/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[19]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_18/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[19]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_19/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[23]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_20/CK
+  Location pin: SLICE_X0Y41.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: processor/reset_ctr/M_ctr_q[23]/CLK
+  Logical resource: processor/reset_ctr/M_ctr_q_21/CK
+  Location pin: SLICE_X0Y41.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.411|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 26835419550 paths, 0 nets, and 7507 connections
+
+Design statistics:
+   Minimum period:  19.411ns{1}   (Maximum frequency:  51.517MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Dec 08 11:48:52 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 263 MB
+
+
+
