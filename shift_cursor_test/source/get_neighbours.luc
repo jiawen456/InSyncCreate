@@ -1,0 +1,158 @@
+module get_neighbours (
+    input clk,  // clock
+    input rst,  // reset
+    input cursor[25],
+    output up[25],
+    output down[25],
+    output left[25],
+    output right[25]
+  ) {
+  
+  .clk(clk),.rst(rst) {
+    dff ctr[2];
+    dff up_temp[25];
+    dff down_temp[25];
+    dff left_temp[25];
+    dff right_temp[25];
+    dff cursor_position[5];
+  }
+  
+  alu alu;
+  get_position get_position;
+  
+  const HORI = 4; // step amount in horizontal direction
+  const VERT = 3; // step amount in vertical direction
+  
+  always {
+    
+    alu.a = 25b0;
+    alu.b = 25b0;
+    alu.alufn = 25b0;
+    
+    up_temp.d = up_temp.q;
+    down_temp.d = down_temp.q;
+    left_temp.d = left_temp.q;
+    right_temp.d = right_temp.q;
+    cursor_position.d = cursor_position.q;
+    
+    get_position.cursor = cursor;
+    cursor_position.d = get_position.pos;
+    
+    ctr.d = ctr.q + 1;
+    
+    case(ctr.q) {
+      
+      0:
+        alu.a = cursor;
+        alu.b = VERT;
+        alu.alufn = 6b100000; //SHL
+        up_temp.d = alu.out;
+      
+      1:
+        alu.a = cursor;
+        alu.b = VERT;
+        alu.alufn = 6b100001; //SHR
+        down_temp.d = alu.out;
+      
+      2:
+        alu.a = cursor;
+        alu.b = HORI;
+        alu.alufn = 6b100000; //SHL
+        left_temp.d = alu.out;
+      
+      3:
+        alu.a = cursor;
+        alu.b = HORI;
+        alu.alufn = 6b100001; //SHR
+        right_temp.d = alu.out;
+      
+      default:
+        alu.a = 25b0;
+        alu.b = 25b0;
+        alu.alufn = 6b0;
+      
+    }
+    
+    case (cursor_position.q) {
+      
+      0:
+        up = 25b0;
+        down = 25b0;
+        left = left_temp.q;
+        right = 25b0;
+      
+      1:
+        up = up_temp.q;
+        down = 25b0;
+        left = left_temp.q;
+        right = 25b0;
+      
+      2:
+        up = up_temp.q;
+        down = 25b0;
+        left = left_temp.q;
+        right = 25b0;
+      
+      3:
+        up = up_temp.q;
+        down = 25b0;
+        left = 25b0;
+        right = 25b0;
+      
+      7:
+        up = 25b0;
+        down = down_temp.q;
+        left = left_temp.q;
+        right = 25b0;
+      
+      10:
+        up = up_temp.q;
+        down = 25b0;
+        left = 25b0;
+        right = right_temp.q;
+      
+      14:
+        up = 25b0;
+        down = down_temp.q;
+        left = left_temp.q;
+        right = 25b0;
+      
+      17:
+        up = up_temp.q;
+        down = 25b0;
+        left = 25b0;
+        right = right_temp.q;
+      
+      21:
+        up = 25b0;
+        down = down_temp.q;
+        left = 25b0;
+        right = 25b0;
+      
+      22:
+        up = 25b0;
+        down = down_temp.q;
+        left = 25b0;
+        right = right_temp.q;
+      
+      23:
+        up = 25b0;
+        down = down_temp.q;
+        left = 25b0;
+        right = right_temp.q;
+      
+      24:
+        up = 25b0;
+        down = down_temp.q;
+        left = 25b0;
+        right = right_temp.q;
+      
+      default:
+        up = up_temp.q;
+        down = down_temp.q;
+        left = left_temp.q;
+        right = right_temp.q;
+    }
+    
+  }
+}

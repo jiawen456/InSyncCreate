@@ -1,0 +1,206 @@
+module get_neighbours_x (
+    input clk,  // clock
+    input rst,  // reset
+    input cursor[25],
+    output up_left[25],
+    output down_left[25],
+    output up_right[25],
+    output down_right[25]
+  ) {
+  
+  .clk(clk),.rst(rst) {
+    dff ctr[2];
+    dff ul_temp[25];
+    dff dl_temp[25];
+    dff ur_temp[25];
+    dff dr_temp[25];
+    dff cursor_position[5];
+  }
+  
+  alu alu;
+  get_position get_position;
+  
+  const BW_DIAG = 7; // step amount in horizontal direction
+  const FW_DIAG = 1; // step amount in vertical direction
+  
+  always {
+    
+    alu.a = 25b0;
+    alu.b = 25b0;
+    alu.alufn = 25b0;
+    
+    ul_temp.d = ul_temp.q;
+    dl_temp.d = dl_temp.q;
+    ur_temp.d = ur_temp.q;
+    dr_temp.d = dr_temp.q;
+    cursor_position.d = cursor_position.q;
+    
+    get_position.cursor = cursor;
+    cursor_position.d = get_position.pos;
+    
+    ctr.d = ctr.q + 1;
+    
+    case(ctr.q) {
+      
+      0:
+        alu.a = cursor;
+        alu.b = BW_DIAG;
+        alu.alufn = 6b100000; //SHL
+        ul_temp.d = alu.out;
+      
+      1:
+        alu.a = cursor;
+        alu.b = FW_DIAG;
+        alu.alufn = 6b100000; //SHL
+        dl_temp.d = alu.out;
+      
+      2:
+        alu.a = cursor;
+        alu.b = FW_DIAG;
+        alu.alufn = 6b100001; //SHR
+        ur_temp.d = alu.out;
+      
+      3:
+        alu.a = cursor;
+        alu.b = BW_DIAG;
+        alu.alufn = 6b100001; //SHR
+        dr_temp.d = alu.out;
+      
+      default:
+        alu.a = 25b0;
+        alu.b = 25b0;
+        alu.alufn = 6b0;
+      
+    }
+    
+    case (cursor_position.q) {
+      
+      0:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = 25b0;
+      
+      1:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = 25b0;
+      
+      2:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = 25b0;
+      
+      3:
+        up_left = ul_temp.q;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = 25b0;
+      
+      4:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = 25b0;
+      
+      5:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = ur_temp.q;
+        down_right = 25b0;
+      
+      6:
+        up_left = ul_temp.q;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = 25b0;
+      
+      7:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = dr_temp.q;
+      
+      10:
+        up_left = ul_temp.q;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      11:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = dr_temp.q;
+      
+      13:
+        up_left = ul_temp.q;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      14:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = dr_temp.q;
+      
+      17:
+        up_left = ul_temp.q;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      18:
+        up_left = 25b0;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = dr_temp.q;
+        
+      19:
+        up_left = 25b0;
+        down_left = dl_temp.q;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+        
+      20:
+        up_left = 25b0;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+        
+      21:
+        up_left = 25b0;
+        down_left = dl_temp.q;
+        up_right = 25b0;
+        down_right = dr_temp.q;
+      
+      22:
+        up_left = 25b0;
+        down_left = dl_temp.q;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      23:
+        up_left = 25b0;
+        down_left = dl_temp.q;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      24:
+        up_left = 25b0;
+        down_left = 25b0;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+      
+      default:
+        up_left = ul_temp.q;
+        down_left = dl_temp.q;
+        up_right = ur_temp.q;
+        down_right = dr_temp.q;
+    }
+    
+  }
+}

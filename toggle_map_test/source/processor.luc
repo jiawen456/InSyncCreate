@@ -1,0 +1,139 @@
+module processor (
+    input clk,  // clock
+    input rst,  // reset
+    input button[5],
+    output out[25]
+  ) {
+  
+  sig pos[5];
+  sig completed;
+  sig out_temp[25];
+  
+  .clk(clk) {
+    edge_detector left_btn(#RISE(1), #FALL(0));
+    button_conditioner left_btn_cond;
+    
+    edge_detector right_btn(#RISE(1), #FALL(0));
+    button_conditioner right_btn_cond;
+    
+    edge_detector up_btn(#RISE(1), #FALL(0));
+    button_conditioner up_btn_cond;
+    
+    edge_detector down_btn(#RISE(1), #FALL(0));
+    button_conditioner down_btn_cond;
+    
+    edge_detector enter_btn(#RISE(1), #FALL(0));
+    button_conditioner enter_btn_cond;
+    
+    .rst(rst) {
+      
+      dff blink[25];
+      dff current_cursor[25](#INIT(25b1));
+      dff next_cursor[25](#INIT(25b1));
+      dff direction[2];
+      
+      dff current_map[25];
+      
+      fsm state = {IDLE,PLAYING,SHIFT,TOGGLE};
+      
+      shift_cursor shift_cursor;
+      toggle_map toggle_map;
+      
+    }
+  }
+  
+  get_position get_position;
+  
+  always {
+    
+    left_btn_cond.in = button[3];
+    left_btn.in = left_btn_cond.out;
+    
+    right_btn_cond.in = button[4];
+    right_btn.in = right_btn_cond.out;
+    
+    up_btn_cond.in = button[0];
+    up_btn.in = up_btn_cond.out;
+    
+    down_btn_cond.in = button[2];
+    down_btn.in = down_btn_cond.out;
+    
+    enter_btn_cond.in = button[1];
+    enter_btn.in = enter_btn_cond.out;
+    
+    direction.d = direction.q;
+    current_cursor.d = current_cursor.q;
+    current_map.d = current_map.q;
+    next_cursor.d = next_cursor.q;
+    state.d = state.q;
+    
+    shift_cursor.direction = direction.q;
+    shift_cursor.cursor = current_cursor.q;
+    
+    toggle_map.map = current_map.q;
+    toggle_map.cursor = current_cursor.q;
+    
+    out_temp= 25b0;
+    
+    case (state.q) {
+      
+      state.IDLE:
+        current_map.d = 25b1010101010;
+        if (enter_btn.out) {
+          state.d = state.PLAYING;
+        }
+      
+      state.PLAYING:
+        
+        current_cursor.d = next_cursor.q;
+        out_temp = current_cursor.q;
+        
+        if (up_btn.out) {
+          direction.d = 2b00;
+          state.d = state.SHIFT;
+        }
+        
+        if (down_btn.out) {
+          direction.d = 2b01;
+          state.d = state.SHIFT;
+        }
+        
+        if (left_btn.out) {
+          direction.d = 2b10;
+          state.d = state.SHIFT;
+        }
+        
+        if (right_btn.out) {
+          direction.d = 2b11;
+          state.d = state.SHIFT;
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.TOGGLE;
+        }
+      
+      state.SHIFT:
+        
+        out_temp = shift_cursor.out;
+        next_cursor.d = out_temp;
+        
+        state.d = state.PLAYING;
+      
+      state.TOGGLE:
+        
+        //completed = toggle_map.completed;
+        current_map.d = toggle_map.out;
+        
+        //if (completed == 0) {
+          state.d = state.PLAYING;
+        //}
+      
+    }
+    
+    blink.d = blink.q + 1;
+    get_position.cursor = out_temp;
+    pos = get_position.pos;
+    out = current_map.q;
+    out[pos] = blink.q[24];
+  }
+}

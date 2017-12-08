@@ -1,0 +1,57 @@
+module decimal2 ( //converts 8-bit binary input to 3-digit decimal output
+    input a[8],
+    output out1[4],  
+    output out0[4]
+  ) {
+
+  always {
+    if (a<=9){
+      out1=4b0;
+      out0=a[3:0];
+    }
+    else if (a>9 && a<=19){
+      out1=4b1;
+      out0=a-10;
+    }
+    else if (a>19 && a<=29){
+      out1=4b10;
+      out0=a-20;
+    }
+    else if (a>29 && a<=39){
+      out1=4b11;
+      out0=a-30;
+    }
+     else if (a>39 && a<=49){
+      out1=4b100;
+      out0=a-40;
+    }
+     else if (a>49 && a<=59){
+      out1=4b101;
+      out0=a-50;
+    }
+     else if (a>59 && a<=69){
+      out1=4b110;
+      out0=a-60;
+    }
+     else if (a>69 && a<=79){
+      out1=4b111;
+      out0=a-70;
+    }
+     else if (a>79 && a<=89){
+      out1=4b1000;
+      out0=a-80;
+   }
+     else if (a>89 && a<=99){
+      out1=4b1001;
+      out0=a-90;
+   }      
+     else if (a>99 && a<=109){
+      out1=4b0;
+      out0=a-100;
+   }                                                                       
+    else{
+      out1=0;
+      out0=0;
+    }
+  }
+}

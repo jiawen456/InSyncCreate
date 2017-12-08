@@ -1,0 +1,60 @@
+module adder (
+    input a[25],
+    input b[25],
+    input alufn[6],    
+    output z,   
+    output v,   
+    output n,   
+    output overflow,
+    output out[25]
+  ) {
+    
+  sig xA[25]; 
+  sig xB[25];
+  sig s[25];
+  sig compare_sum[25];
+  
+  always {
+  
+    compare_sum = a - b;
+    overflow = b0;
+    
+    xA = a;
+    // xA and a are equal, xA is assigned for consistency purposes
+    
+    xB = b ^ 8x{alufn[0]}; 
+    // s = xA + xB + alufn; omitted this, used the more "high level" + and -
+    // xB still needed to compute v
+    
+    case(alufn[1:0]) {
+      2b00: 
+        s = a + b;
+        overflow = (xA[7] & xB[7] & ~s[7]) | (~xA[7] & ~xB[7] & s[7]);
+      2b01: 
+        s = a - b;
+        overflow = (xA[7] & xB[7] & ~s[7]) | (~xA[7] & ~xB[7] & s[7]);
+      2b10: 
+        s = a * b;
+      2b11: 
+        s = a-(a/b*b);
+      default: 
+        s = a + b;
+    }
+    
+    z = ~|compare_sum; 
+    // reduction operator | does OR on every bit of s. ~ to invert
+    // z is 1 only when every bit of s is 0
+    
+    n = compare_sum[7];
+    // s is signed binary integer, most significant bit is 1 when negative
+    // n is true when s is negative, hence n is equivalent to s[7]
+    
+    v = (xA[7] & xB[7] & ~compare_sum[7]) | (~xA[7] & ~xB[7] & compare_sum[7]);
+    // v is true when addition operation overflows
+    // simply follow the boolean equation given 
+    // v = (xA[7])(xB[7])(s[7]') + (xA[7])'(xB[7])'(s[7])
+    
+    out = s;
+      
+  }
+}

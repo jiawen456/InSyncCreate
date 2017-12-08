@@ -1,0 +1,19 @@
+module gen_map_temp (
+    input mask_type,
+    input game_type,
+    output out[25]
+  ) {
+  
+  always {
+    out = 25b0;
+    if (mask_type == 0 && game_type == 0) {
+      out = 25b0001011101000011011101010;
+    } else if (mask_type == 1 && game_type == 0) {
+      out = 25b1110101100001001000100101;
+    } else if (mask_type == 0 && game_type == 1) {
+      out = 25b0101001110001011110000110;
+    } else if (mask_type == 1 && game_type == 1) {
+      out = 25b0110100101100010010011110;
+    }
+  }
+}

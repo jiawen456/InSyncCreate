@@ -1,0 +1,20 @@
+module compare (
+    input z,
+    input v,
+    input n,    
+    input alufn[6],
+    output out[25] 
+) {
+  
+  sig lsb;
+  
+  always {
+    case(alufn[2:1]) {
+      2b01: lsb = z;            // a = b
+      2b10: lsb = n ^ v;        // a < b
+      2b11: lsb = z | (n ^ v);  // a <=b
+      default: lsb = 0;
+    }   
+    out = c{24b0, lsb};         // most significant 7 bits of the output are always 0
+  }
+}

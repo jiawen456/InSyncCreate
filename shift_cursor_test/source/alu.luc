@@ -1,0 +1,39 @@
+module alu (
+    input a[25],
+    input b[25],
+    input alufn[6],  
+    output out[25]
+  ) {
+  
+  .a(a), .b(b), .alufn(alufn) {
+    adder adder;
+    shift shift;
+    boole boole;
+  }
+  compare compare;
+  
+  always {
+  
+    compare.z = adder.z;
+    compare.v = adder.v;
+    compare.n = adder.n;
+    compare.alufn = alufn;
+    
+    case(alufn[5:4]) {
+      2b00:
+          out = adder.out;
+        
+      2b01: 
+        out = boole.out;
+        
+      2b10: 
+        out = shift.out;
+        
+      2b11: 
+        out = compare.out;
+        
+      default: 
+        out = 25b0;
+    }  
+  }
+}

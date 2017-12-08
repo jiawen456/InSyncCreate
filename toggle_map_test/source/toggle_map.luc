@@ -1,0 +1,89 @@
+module toggle_map (
+    input clk,
+    input rst,
+    input cursor[25],
+    input map[25],
+    output out[25],
+    output completed
+  ) {
+  
+  sig completed_or[25];
+  sig completed_and[25];
+  
+  alu alu;
+  
+  .clk(clk),.rst(rst) {
+    get_neighbours get_neighbours;
+    dff ctr[3];
+    dff mask1[25];
+    dff mask2[25];
+    dff mask3[25];
+    dff mask4[25];
+    dff out_temp[25];
+  }
+  
+  always {
+    
+    get_neighbours.cursor = cursor;
+    
+    alu.a = 25b0;
+    alu.b = 25b0;
+    alu.alufn = 6b0;
+    
+    mask1.d = mask1.q;
+    mask2.d = mask2.q;
+    mask3.d = mask3.q;
+    mask4.d = mask4.q;
+    out_temp.d = out_temp.q;
+    
+    ctr.d = ctr.q + 1;
+    
+    case(ctr.q) {
+      
+      b000:
+        alu.alufn = 6b011110;
+        alu.a = cursor;
+        alu.b = get_neighbours.up;
+        mask1.d = alu.out;
+      
+      b001:
+        alu.alufn = 6b011110;
+        alu.a = mask1.q;
+        alu.b = get_neighbours.down;
+        mask2.d = alu.out;
+      
+      b010:
+        alu.alufn = 6b011110;
+        alu.a = mask2.q;
+        alu.b = get_neighbours.left;
+        mask3.d = alu.out;
+      
+      b011:
+        alu.alufn = 6b011110;
+        alu.a = mask3.q;
+        alu.b = get_neighbours.right;
+        mask4.d = alu.out;
+      
+      b100:
+        alu.alufn = 6b010110;
+        alu.a = map;
+        alu.b = mask4.q;
+        out_temp.d = alu.out;
+    }
+    
+    out = out_temp.q;
+    
+    completed = 0;
+    
+    completed_or = |out_temp.q;
+    if (completed_or == 0) {
+      completed = 1;
+    }
+    
+    completed_and = &out_temp.q;
+    if (completed_and == 1) {
+      completed = 1;
+    }
+    
+  }
+}

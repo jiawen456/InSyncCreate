@@ -1,0 +1,375 @@
+module processor (
+    input clk,  // clock
+    input rst,  // reset
+    input button[5],
+    input start_button,
+    input reset_button,
+    output display_seg0[8],
+    output display_seg1[8],
+    output display_seg2[8],
+    output display_seg3[8],
+    output out[25]
+  ) {
+  
+  sig completed;
+  sig check;
+  sig pos[25];
+  
+  .clk(clk) {
+    edge_detector left_btn(#RISE(1), #FALL(0));
+    button_conditioner left_btn_cond;
+    
+    edge_detector right_btn(#RISE(1), #FALL(0));
+    button_conditioner right_btn_cond;
+    
+    edge_detector up_btn(#RISE(1), #FALL(0));
+    button_conditioner up_btn_cond;
+    
+    edge_detector down_btn(#RISE(1), #FALL(0));
+    button_conditioner down_btn_cond;
+    
+    edge_detector enter_btn(#RISE(1), #FALL(0));
+    button_conditioner enter_btn_cond;
+    
+    edge_detector start_btn(#RISE(1), #FALL(0));
+    button_conditioner start_btn_cond;
+    
+    edge_detector reset_btn(#RISE(1), #FALL(0));
+    button_conditioner reset_btn_cond;
+    
+    counter reset_ctr(#SIZE(4),#DIV(30));
+    
+    .rst(rst) {
+      
+      fsm state = {IDLE,CREATE_SELECT,GAME_SELECT,MASK_SELECT,GEN_MAP,PLAYING,RESET,CURSOR,CHECK,TOGGLE,DONE};
+      dff blink[25];
+      
+      dff old_map[25];
+      dff current_map[25];
+      
+      dff current_score[8];
+      dff current_highscore[8];
+      
+      dff current_cursor[25](#INIT(25b1));
+      dff next_cursor[25](#INIT(25b1));
+      dff direction[2];
+      
+      dff game_type;
+      dff mask_type;
+      dff create_type;
+      
+      dff out_temp[25];
+      
+      toggle_map toggle_map;
+      shift_cursor shift_cursor;
+      check_lighted check_lighted;
+      
+    }
+  }
+  
+  gen_map_temp gen_map;
+  get_position get_position;
+  
+  decimal2 decimal_score;
+  decimal2 decimal_highscore;
+  
+  seven_seg sevenseg3; // led segment 3
+  seven_seg sevenseg2; // led segment 2
+  seven_seg sevenseg1; // led segment 1
+  seven_seg sevenseg0; // led segment 0
+  
+  always {
+    
+    // set button conditioner for all buttons
+    
+    left_btn_cond.in = button[3];
+    left_btn.in = left_btn_cond.out;
+    
+    right_btn_cond.in = button[4];
+    right_btn.in = right_btn_cond.out;
+    
+    up_btn_cond.in = button[0];
+    up_btn.in = up_btn_cond.out;
+    
+    down_btn_cond.in = button[2];
+    down_btn.in = down_btn_cond.out;
+    
+    enter_btn_cond.in = button[1];
+    enter_btn.in = enter_btn_cond.out;
+    
+    start_btn_cond.in = start_button;
+    start_btn.in = start_btn_cond.out;
+    
+    reset_btn_cond.in = reset_button;
+    reset_btn.in = reset_btn_cond.out;
+    
+    // set dff defaults
+    
+    old_map.d = old_map.q;
+    current_map.d = current_map.q;
+    
+    current_cursor.d = current_cursor.q;
+    next_cursor.d = next_cursor.q;
+    direction.d = direction.q;
+    
+    current_score.d = current_score.q;
+    current_highscore.d = current_highscore.q;
+    
+    mask_type.d = mask_type.q;
+    game_type.d = game_type.q;
+    create_type.d = create_type.q;
+    
+    blink.d = blink.q + 1;
+    
+    // set default values
+    
+    reset_ctr.rst = 0;
+    out = 25b0;
+    
+    // set the inputs to various modules
+    
+    gen_map.mask_type = mask_type.q;
+    gen_map.game_type = game_type.q;
+    
+    toggle_map.map = current_map.q;
+    toggle_map.cursor = current_cursor.q;
+    toggle_map.mask_type = mask_type.q;
+    
+    shift_cursor.direction = direction.q;
+    shift_cursor.cursor = current_cursor.q;
+    
+    decimal_highscore.a = current_highscore.q;
+    decimal_score.a = current_score.q;
+    
+    check_lighted.cursor = current_cursor.q;
+    check_lighted.map = current_map.q;
+    
+    get_position.cursor = out_temp.q;
+    
+    // finite state machine
+    
+    case(state.q) {
+      
+      state.IDLE:
+        
+        // change back to start_btn !!!!!!
+        out = 25b0;
+        if (enter_btn.out) {
+          state.d = state.CREATE_SELECT;
+        }
+      
+      state.CREATE_SELECT:
+        
+        if (up_btn.out || down_btn.out || left_btn.out || right_btn.out) {
+          create_type.d = ~create_type.q;
+        }
+        
+        if (create_type.q == 0) {
+          out = 25b10011010010110101100000;
+        }
+        
+        if (create_type.q == 1) {
+          out = 25b00011010110000001000100;
+          
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.GAME_SELECT;
+        }
+      
+      state.GAME_SELECT:
+        
+        if (up_btn.out || down_btn.out || left_btn.out || right_btn.out) {
+          game_type.d = ~game_type.q;
+        }
+        
+        if (game_type.q == 0) {
+          out = 25b00001001001001001000000; // 1: regular mode
+        }
+        
+        if (game_type.q == 1) {
+          out = 25b10001010111110101000100; // 2: lit only mode
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.MASK_SELECT;
+        }
+      
+      state.MASK_SELECT:
+        
+        if (up_btn.out || down_btn.out || left_btn.out || right_btn.out) {
+          mask_type.d = ~mask_type.q;
+        }
+        
+        if (mask_type.q == 0) {
+          out = 25b11001001100000000; // + mask
+        }
+        
+        if (mask_type.q == 1) {
+          out = 25b10000011100000100000; // x mask
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.GEN_MAP;
+        }
+      
+      state.GEN_MAP:
+        
+        if (create_type.q == 0) {
+          gen_map.mask_type = mask_type.q;
+          gen_map.game_type = game_type.q;
+          current_map.d = gen_map.out;
+          old_map.d = gen_map.out;
+        }
+        
+        current_highscore.d = 8b01100011;
+        current_score.d = 8b0;
+        
+        current_cursor.d = 8b1;
+        next_cursor.d = 8b1;
+        
+        state.d = state.PLAYING;
+      
+      state.PLAYING:
+        
+        current_cursor.d = next_cursor.q;
+        out_temp.d = current_cursor.q;
+        
+        if (create_type.q == 0 && reset_btn.out) {
+          state.d = state.RESET;
+        }
+        
+        if (create_type.q == 1 && reset_btn.out) {
+          old_map.d = current_map.q;
+          create_type.d = ~create_type.q;
+          state.d = state.RESET;
+        }
+        
+        if (enter_btn.out) {
+          state.d = state.CHECK;
+        }
+        
+        if (up_btn.out) {
+          direction.d = 2b00;
+          state.d = state.CURSOR;
+        }
+        
+        if (down_btn.out) {
+          direction.d = 2b01;
+          state.d = state.CURSOR;
+        }
+        
+        if (left_btn.out) {
+          direction.d = 2b10;
+          state.d = state.CURSOR;
+        }
+        
+        if (right_btn.out) {
+          direction.d = 2b11;
+          state.d = state.CURSOR;
+        }
+        
+        
+        if (start_btn.out) {
+          state.d = state.IDLE;
+        }
+        
+        pos = get_position.pos;
+        out = current_map.q;
+        out[pos] = blink.q[24];
+      
+      state.RESET:
+        
+        current_map.d = old_map.q;
+        current_cursor.d = 8b1;
+        current_score.d = 8b0;
+        next_cursor.d = 8b1;
+        
+        state.d = state.PLAYING;
+      
+      state.CHECK:
+        
+        check = check_lighted.out;
+        
+        if (check == 1) {
+          state.d = state.TOGGLE;
+        }
+        
+        if (check == 0) {
+          state.d = state.PLAYING;
+        }
+        
+        if (game_type.q == 0 || create_type.q == 1) {
+          state.d = state.TOGGLE;
+        }
+      
+      state.TOGGLE:
+        
+        completed = toggle_map.completed;
+        current_map.d = toggle_map.out;
+        
+        if (create_type.q == 0) {
+          current_score.d = current_score.q + 8b1;
+        }
+        
+        if (completed == 0) {
+          state.d = state.PLAYING;
+        }
+        
+        if (create_type.q == 1 && completed == 1) {
+          state.d = state.PLAYING;
+        }
+        
+        if (create_type.q == 0 && completed == 1) {
+          reset_ctr.rst = 1;
+          state.d = state.DONE;
+        }
+      
+      state.CURSOR:
+        
+        next_cursor.d = shift_cursor.out;
+        state.d = state.PLAYING;
+      
+      state.DONE:
+        
+        blink.d = blink.q + 1;
+        out = 25x{~blink.q[24]};
+        
+        if (current_highscore.q > current_score.q) {
+          current_highscore.d = current_score.q;
+        }
+        
+        if (start_btn.out) {
+          current_cursor.d = 25b1;
+          current_map.d = 25b0;
+          state.d = state.IDLE;
+        }
+        
+        // change back to reset_btn
+        if (reset_btn.out) {
+          state.d = state.RESET;
+        }
+        
+        // after some time, if player did not reset, reset by itself
+        if (reset_ctr.value == 15) {
+          state.d = state.IDLE;
+        }
+      
+    }
+    
+    // get each digit of decimal value of highscore and score
+    
+    sevenseg3.char = decimal_highscore.out1;
+    sevenseg2.char = decimal_highscore.out0;
+    sevenseg1.char = decimal_score.out1;
+    sevenseg0.char = decimal_score.out0;
+    
+    // get the 7 segment array for each digit
+    
+    display_seg0 = ~sevenseg0.segs;
+    display_seg1 = ~sevenseg1.segs;
+    display_seg2 = ~sevenseg2.segs;
+    display_seg3 = ~sevenseg3.segs;
+    
+  }
+}

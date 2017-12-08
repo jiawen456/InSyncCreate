@@ -1,0 +1,31 @@
+module boole (
+    input a[25],
+    input b[25],
+    input alufn[6],    
+    output out[25]
+  ) {
+  
+  always {
+    case(alufn[3:0]){  // last 4 bit of alufn determines the function
+      4b1000:  
+        out = a & b;         // bit-wise AND
+      4b1110:  
+        out = a | b;         // bit-wise OR
+      4b0110:  
+        out = a ^ b;         // bit-wise XOR
+      4b1010:  
+        out = a;             // is A
+      4b0111:  
+        out = ~(a & b);      // bit-wise NAND
+      4b0001:  
+        out = ~(a | b);      // bit-wise NOR
+      4b1001:  
+        out = ~(a ^ b);      // bit-wise XNOR
+      4b0101:
+        out = ~a;            // is not A  
+        
+      default:
+        out = 0;
+    }
+  }
+}

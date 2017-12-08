@@ -1,0 +1,45 @@
+module shift_cursor (
+    input clk,
+    input rst,
+    input direction[2],
+    input cursor[25],
+    output out[25]
+  ) {
+  
+  sig out_temp[25];
+  
+  .clk(clk), .rst(rst) {
+    get_neighbours get_neighbours;
+  }
+  
+  always {
+    
+    get_neighbours.cursor = cursor;
+    
+    case(direction){
+      
+      2b00:  //up
+        out_temp = get_neighbours.up;
+      
+      2b01:  //down
+        out_temp = get_neighbours.down;
+      
+      2b10:  //left
+        out_temp = get_neighbours.left;
+      
+      2b11:  //right
+        out_temp = get_neighbours.right;
+      
+      default:
+        out_temp = cursor;
+      
+    }
+    
+    out = out_temp;
+    
+    if (out_temp == 25b0) {
+      out = cursor;
+    }
+    
+  }
+}

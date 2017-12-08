@@ -1,0 +1,95 @@
+module mojo_temp (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input cclk,             // configuration clock, AVR ready when high
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,      // AVR RX buffer full
+    input start_button,
+    input reset_button,
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  sig rst;                  // reset signal
+  sig out_temp[25];
+  const VERT = 3;
+  const HORI = 4;
+  
+  .clk(clk) {
+    reset_conditioner reset_cond;
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    
+    edge_detector enter_btn(#RISE(1), #FALL(0));
+    button_conditioner enter_btn_cond;
+    
+    edge_detector down_btn(#RISE(1), #FALL(0));
+    button_conditioner down_btn_cond;
+    
+    .rst(rst) {
+      dff ctr[1];
+      dff temp[25];
+      dff temp1[25];
+      dff cursor[25];
+      dff direction[2];
+      counter counter (#SIZE(1),#DIV(25));
+      //get_neighbours_test get_neighbours;
+      shift_cursor shift_cursor;
+    }
+  }
+  
+  
+  
+  always {
+    
+    reset_cond.in = ~rst_n;   // input raw inverted reset signal
+    rst = reset_cond.out;     // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits2][6];
+    
+    
+    enter_btn_cond.in = io_button[1];
+    enter_btn.in = enter_btn_cond.out;
+    
+    down_btn_cond.in = io_button[2];
+    down_btn.in = down_btn_cond.out;
+    
+    direction.d = direction.q;
+    
+    if (enter_btn.out) {
+      direction.d = b00;
+      //io_led[0] = get_neighbours.up[7:0];
+      //io_led[1] = get_neighbours.up[15:8];
+      //io_led[2] = get_neighbours.up[23:16];
+    } else if (down_btn.out) {
+      direction.d = b01;
+    }
+    
+    shift_cursor.cursor = 8b10000;
+    shift_cursor.direction = direction.q;
+    
+    out_temp = shift_cursor.out;
+    
+    io_led[0] = out_temp[7:0];
+    io_led[1] = out_temp[15:8];
+    io_led[2] = out_temp[23:16];
+    
+  }
+}

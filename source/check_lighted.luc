@@ -1,0 +1,26 @@
+module check_lighted (
+    input clk,  // clock
+    input rst,  // reset
+    input cursor[25],
+    input map[25],
+    output out
+  ) {
+  
+  sig temp[25];
+  
+  alu alu;
+  
+  always {
+    
+    alu.a = cursor;
+    alu.b = map;
+    alu.alufn = 6b011000; //AND
+    temp = alu.out;
+    
+    if (temp == cursor) {
+      out = 1;
+    } else {
+      out = 0;
+    }
+  }
+}
