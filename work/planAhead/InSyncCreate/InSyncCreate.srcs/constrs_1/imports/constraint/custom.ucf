@@ -1,5 +1,5 @@
 NET "start_button" LOC = P41 | IOSTANDARD = LVTTL | PULLUP;
-NET "reset_button" LOC = P57 | IOSTANDARD = LVTTL | PULLUP;
+NET "reset_button" LOC = P51 | IOSTANDARD = LVTTL | PULLUP;
 
 NET "io_led<0>"  LOC = P97 | IOSTANDARD = LVTTL;
 NET "io_led<1>"  LOC = P98 | IOSTANDARD = LVTTL;
@@ -44,11 +44,11 @@ NET "io_sel<2>" LOC = P7 | IOSTANDARD = LVTTL;
 NET "io_sel<3>" LOC = P12 | IOSTANDARD = LVTTL;
 
 # PULLDOWN is needed to prevent floating inputs
-NET "io_button<0>" LOC = P137 | IOSTANDARD = LVTTL | PULLDOWN;
-NET "io_button<1>" LOC = P140 | IOSTANDARD = LVTTL | PULLDOWN;
-NET "io_button<2>" LOC = P139 | IOSTANDARD = LVTTL | PULLDOWN;
-NET "io_button<3>" LOC = P142 | IOSTANDARD = LVTTL | PULLDOWN;
-NET "io_button<4>" LOC = P138 | IOSTANDARD = LVTTL | PULLDOWN;
+NET "io_button<0>" LOC = P137 | IOSTANDARD = LVTTL | PULLUP;
+NET "io_button<1>" LOC = P140 | IOSTANDARD = LVTTL | PULLUP;
+NET "io_button<2>" LOC = P139 | IOSTANDARD = LVTTL | PULLUP;
+NET "io_button<3>" LOC = P142 | IOSTANDARD = LVTTL | PULLUP;
+NET "io_button<4>" LOC = P138 | IOSTANDARD = LVTTL | PULLUP;
 
 NET "io_dip<23>" LOC = P57 | IOSTANDARD = LVTTL | PULLDOWN;
 NET "io_dip<22>" LOC = P58 | IOSTANDARD = LVTTL | PULLDOWN;

@@ -7,11 +7,13 @@ module gen_map_temp (
   always {
     out = 25b0;
     if (mask_type == 0 && game_type == 0) {
-      out = 25b0001011101000011011101010;
+      out = 25b110010;
+      //out = 25b0000100000000000000010000;
     } else if (mask_type == 1 && game_type == 0) {
-      out = 25b1110101100001001000100101;
+      out = 25b0000010011010101100100000;
     } else if (mask_type == 0 && game_type == 1) {
-      out = 25b0101001110001011110000110;
+      out = 25b01100011001000100110010110;
+      //out = 25b0101001110001011110000110;
     } else if (mask_type == 1 && game_type == 1) {
       out = 25b0110100101100010010011110;
     }

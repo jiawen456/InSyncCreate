@@ -37,7 +37,7 @@ module processor (
     edge_detector reset_btn(#RISE(1), #FALL(0));
     button_conditioner reset_btn_cond;
     
-    counter reset_ctr(#SIZE(4),#DIV(30));
+    counter reset_ctr(#SIZE(4),#DIV(26));
     
     .rst(rst) {
       
@@ -124,7 +124,7 @@ module processor (
     // set default values
     
     reset_ctr.rst = 0;
-    out = 25b0;
+    out = 25b0; 
     
     // set the inputs to various modules
     
@@ -151,8 +151,14 @@ module processor (
     case(state.q) {
       
       state.IDLE:
-
+        
         out = 25b0;
+        create_type.d = 0;
+        game_type.d = 0;
+        mask_type.d = 0;
+        old_map.d = 25b0;
+        current_map.d = 25b0;
+        
         if (start_btn.out) {
           state.d = state.CREATE_SELECT;
         }
@@ -168,7 +174,7 @@ module processor (
         }
         
         if (create_type.q == 1) {
-          out = 25b00011010110000001000100;    
+          out = 25b00011010110000001000100;
         }
         
         if (enter_btn.out) {

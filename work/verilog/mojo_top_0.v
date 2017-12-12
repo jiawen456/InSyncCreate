@@ -32,6 +32,8 @@ module mojo_top_0 (
   
   reg [24:0] out_temp;
   
+  reg [0:0] out_button_temp;
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (

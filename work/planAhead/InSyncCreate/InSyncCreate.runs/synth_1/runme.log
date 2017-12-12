@@ -125,13 +125,13 @@ WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4x4-bit Read Only RAM for signal <io_sel>
-    Found 8-bit 4-to-1 multiplexer for signal <io_seg> created at line 86.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 69
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 69
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 69
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 69
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 69
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 69
+    Found 8-bit 4-to-1 multiplexer for signal <io_seg> created at line 88.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 71
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 71
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 71
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 71
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 71
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 71
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
@@ -175,13 +175,13 @@ Synthesizing Unit <processor_2>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 25-bit adder for signal <M_blink_d> created at line 294.
-    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_47_OUT> created at line 441.
-    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_59_o> created at line 461
+    Found 8-bit adder for signal <M_current_score_q[7]_GND_3_o_add_47_OUT> created at line 446.
+    Found 8-bit comparator lessequal for signal <M_current_score_q[7]_M_current_highscore_q[7]_LessThan_59_o> created at line 466
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 171 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  51 Multiplexer(s).
+	inferred  57 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <processor_2> synthesized.
 
@@ -210,11 +210,11 @@ Unit <pipeline_30> synthesized.
 
 Synthesizing Unit <counter_18>.
     Related source file is "D:/50.002-Computation-Structure/Mojo/InSyncCreate/work/planAhead/InSyncCreate/InSyncCreate.srcs/sources_1/imports/verilog/counter_18.v".
-    Found 34-bit register for signal <M_ctr_q>.
-    Found 34-bit adder for signal <M_ctr_d> created at line 35.
+    Found 30-bit register for signal <M_ctr_q>.
+    Found 30-bit adder for signal <M_ctr_d> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  34 D-type flip-flop(s).
+	inferred  30 D-type flip-flop(s).
 Unit <counter_18> synthesized.
 
 Synthesizing Unit <toggle_map_19>.
@@ -504,11 +504,11 @@ Macro Statistics
  27-bit adder                                          : 10
  28-bit adder                                          : 10
  29-bit adder                                          : 10
- 30-bit adder                                          : 10
+ 30-bit adder                                          : 11
  31-bit adder                                          : 10
  32-bit adder                                          : 10
  33-bit adder                                          : 10
- 34-bit adder                                          : 11
+ 34-bit adder                                          : 10
  35-bit adder                                          : 10
  36-bit adder                                          : 10
  37-bit adder                                          : 10
@@ -533,7 +533,7 @@ Macro Statistics
  2-bit register                                        : 11
  20-bit register                                       : 8
  25-bit register                                       : 28
- 34-bit register                                       : 1
+ 30-bit register                                       : 1
  4-bit register                                        : 2
  5-bit register                                        : 3
  8-bit register                                        : 2
@@ -567,13 +567,13 @@ Macro Statistics
  50-bit comparator lessequal                           : 5
  8-bit comparator greater                              : 20
  8-bit comparator lessequal                            : 3
-# Multiplexers                                         : 3166
- 1-bit 2-to-1 multiplexer                              : 3029
+# Multiplexers                                         : 3172
+ 1-bit 2-to-1 multiplexer                              : 3033
  1-bit 3-to-1 multiplexer                              : 5
  1-bit 4-to-1 multiplexer                              : 5
  2-bit 2-to-1 multiplexer                              : 1
  25-bit 12-to-1 multiplexer                            : 2
- 25-bit 2-to-1 multiplexer                             : 70
+ 25-bit 2-to-1 multiplexer                             : 72
  25-bit 4-to-1 multiplexer                             : 11
  4-bit 2-to-1 multiplexer                              : 40
  8-bit 2-to-1 multiplexer                              : 2
@@ -720,7 +720,7 @@ Macro Statistics
  2-bit up counter                                      : 3
  20-bit up counter                                     : 8
  25-bit up counter                                     : 1
- 34-bit up counter                                     : 1
+ 30-bit up counter                                     : 1
  4-bit up counter                                      : 1
  8-bit up counter                                      : 1
 # Registers                                            : 728
@@ -755,13 +755,13 @@ Macro Statistics
  50-bit comparator lessequal                           : 5
  8-bit comparator greater                              : 20
  8-bit comparator lessequal                            : 3
-# Multiplexers                                         : 3165
- 1-bit 2-to-1 multiplexer                              : 3029
+# Multiplexers                                         : 3171
+ 1-bit 2-to-1 multiplexer                              : 3033
  1-bit 3-to-1 multiplexer                              : 5
  1-bit 4-to-1 multiplexer                              : 5
  2-bit 2-to-1 multiplexer                              : 1
  25-bit 12-to-1 multiplexer                            : 2
- 25-bit 2-to-1 multiplexer                             : 70
+ 25-bit 2-to-1 multiplexer                             : 72
  25-bit 4-to-1 multiplexer                             : 11
  4-bit 2-to-1 multiplexer                              : 40
  8-bit 2-to-1 multiplexer                              : 1
@@ -927,6 +927,7 @@ INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_8> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_12> <processor/toggle_map/get_neighbours/M_up_temp_q_8> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_up_temp_q_9> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ul_temp_q_13> <processor/toggle_map/get_neighbours/M_up_temp_q_9> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_1> 
+INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_3> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_cursor_position_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_cursor_position_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <processor/toggle_map/get_neighbours/M_left_temp_q_4> 
 INFO:Xst:2261 - The FF/Latch <processor/shift_cursor/get_neighbours/M_left_temp_q_5> in Unit <mojo_top_0> is equivalent to the following 2 FFs/Latches, which will be removed : <processor/toggle_map/get_neighbours_x/M_ur_temp_q_0> <processor/toggle_map/get_neighbours/M_left_temp_q_5> 
@@ -980,14 +981,13 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 39.
 FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_1 has been replicated 4 time(s)
-FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_4 has been replicated 4 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_0 has been replicated 5 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_3 has been replicated 4 time(s)
+FlipFlop processor/shift_cursor/get_neighbours/M_cursor_position_q_4 has been replicated 6 time(s)
+FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_0 has been replicated 6 time(s)
 FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_2 has been replicated 4 time(s)
-FlipFlop processor/toggle_map/get_neighbours/M_cursor_position_q_3 has been replicated 4 time(s)
 FlipFlop seven_seg_ctr/M_ctr_q_0 has been replicated 7 time(s)
-FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 2 time(s)
-FlipFlop seven_seg_ctr/M_ctr_q_2 has been replicated 4 time(s)
-FlipFlop seven_seg_ctr/M_ctr_q_3 has been replicated 2 time(s)
+FlipFlop seven_seg_ctr/M_ctr_q_1 has been replicated 4 time(s)
+FlipFlop seven_seg_ctr/M_ctr_q_2 has been replicated 5 time(s)
 
 Final Macro Processing ...
 
@@ -1006,8 +1006,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 746
- Flip-Flops                                            : 746
+# Registers                                            : 745
+ Flip-Flops                                            : 745
 # Shift Registers                                      : 7
  2-bit shift register                                  : 7
 
@@ -1033,7 +1033,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 760   |
+clk                                | BUFGP                  | 759   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1044,9 +1044,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 15.862ns (Maximum Frequency: 63.043MHz)
+   Minimum period: 15.418ns (Maximum Frequency: 64.861MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 15.431ns
+   Maximum output required time after clock: 18.249ns
    Maximum combinational path delay: No path found
 
 =========================================================================

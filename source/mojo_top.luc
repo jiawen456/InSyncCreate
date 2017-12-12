@@ -22,6 +22,7 @@ module mojo_top (
   
   sig rst;                  // reset signal      
   sig out_temp[25];      
+  sig out_button_temp[1]; 
   
   .clk(clk) {
     reset_conditioner reset_cond;
@@ -52,17 +53,10 @@ module mojo_top (
     processor.button = io_button;
     processor.start_button = start_button;
     processor.reset_button = reset_button;
-    
     processor.button = io_button;
     
     out_temp = processor.out;
-    
     io_led = out_temp;
-    
-    //io_led[0] = out_temp[7:0];
-    //io_led[1] = out_temp[15:8];
-    //io_led[2] = out_temp[23:16];
-    //led[0] = out_temp[24];
     
     case(seven_seg_ctr.value){
       0:

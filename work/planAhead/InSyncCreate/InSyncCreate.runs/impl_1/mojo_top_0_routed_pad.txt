@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 08 11:48:44 2017
+Mon Dec 11 21:27:55 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -70,13 +70,13 @@ Pinout by Pin Number:
 |P48       |spi_ss      |IOB      |IO_L48P_D7_2              |INPUT    |LVTTL      |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P49       |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P50       |            |IOBS     |IO_L31N_GCLK30_D15_2      |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
-|P51       |            |IOBM     |IO_L31P_GCLK31_D14_2      |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|P51       |reset_button|IOB      |IO_L31P_GCLK31_D14_2      |INPUT    |LVTTL      |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |P52       |            |         |VCCINT                    |         |           |              |          |         |           |         |1.2      |          |           |                |
 |P53       |            |         |VCCAUX                    |         |           |              |          |         |           |         |3.3      |          |           |                |
 |P54       |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P55       |avr_tx      |IOB      |IO_L30N_GCLK0_USERCCLK_2  |INPUT    |LVTTL      |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P56       |clk         |IOB      |IO_L30P_GCLK1_D13_2       |INPUT    |LVTTL      |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
-|P57       |reset_button|IOB      |IO_L14N_D12_2             |INPUT    |LVTTL      |2             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|P57       |io_dip(23)  |IOB      |IO_L14N_D12_2             |INPUT    |LVTTL      |2             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P58       |io_dip(22)  |IOB      |IO_L14P_D11_2             |INPUT    |LVTTL      |2             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P59       |            |IOBS     |IO_L13N_D10_2             |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |P60       |            |IOBM     |IO_L13P_M1_2              |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
@@ -156,12 +156,12 @@ Pinout by Pin Number:
 |P134      |led[0]      |IOB      |IO_L34P_GCLK19_0          |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P135      |            |         |VCCO_0                    |         |           |0             |          |         |           |         |3.30     |          |           |                |
 |P136      |            |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
-|P137      |io_button[0]|IOB      |IO_L4N_0                  |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
-|P138      |io_button[4]|IOB      |IO_L4P_0                  |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
-|P139      |io_button[2]|IOB      |IO_L3N_0                  |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
-|P140      |io_button[1]|IOB      |IO_L3P_0                  |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
+|P137      |io_button[0]|IOB      |IO_L4N_0                  |INPUT    |LVTTL      |0             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|P138      |io_button[4]|IOB      |IO_L4P_0                  |INPUT    |LVTTL      |0             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|P139      |io_button[2]|IOB      |IO_L3N_0                  |INPUT    |LVTTL      |0             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|P140      |io_button[1]|IOB      |IO_L3P_0                  |INPUT    |LVTTL      |0             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |P141      |io_seg[7]   |IOB      |IO_L2N_0                  |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P142      |io_button[3]|IOB      |IO_L2P_0                  |INPUT    |LVTTL      |0             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
+|P142      |io_button[3]|IOB      |IO_L2P_0                  |INPUT    |LVTTL      |0             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |P143      |io_seg[3]   |IOB      |IO_L1N_VREF_0             |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |P144      |io_seg[2]   |IOB      |IO_L1P_HSWAPEN_0          |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

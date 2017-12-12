@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 08 11:48:16 2017
+// Written by: Map P.20131013 on Mon Dec 11 21:27:32 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -64,6 +64,7 @@ COMP "io_dip(21)" LOCATE = SITE "P66" LEVEL 1;
 COMP "io_dip(14)" LOCATE = SITE "P100" LEVEL 1;
 COMP "io_dip(22)" LOCATE = SITE "P58" LEVEL 1;
 COMP "io_dip(15)" LOCATE = SITE "P99" LEVEL 1;
+COMP "io_dip(23)" LOCATE = SITE "P57" LEVEL 1;
 COMP "io_dip(16)" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip(17)" LOCATE = SITE "P78" LEVEL 1;
 COMP "io_dip(18)" LOCATE = SITE "P75" LEVEL 1;
@@ -86,7 +87,7 @@ COMP "io_led[17]" LOCATE = SITE "P16" LEVEL 1;
 COMP "io_led[18]" LOCATE = SITE "P17" LEVEL 1;
 COMP "io_led[19]" LOCATE = SITE "P21" LEVEL 1;
 COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
-COMP "reset_button" LOCATE = SITE "P57" LEVEL 1;
+COMP "reset_button" LOCATE = SITE "P51" LEVEL 1;
 TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/M_out_temp_q_10" BEL "processor/M_out_temp_q_11" BEL
         "processor/M_out_temp_q_12" BEL "processor/M_out_temp_q_13" BEL
@@ -267,13 +268,19 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_1" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_0" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_1" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_3_1" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_1" BEL
-        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_2" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_2" BEL
-        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_3" BEL
-        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_4" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_3_2" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_2" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_3" BEL
         "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_4" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_3_3" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_3_4" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_3" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_1_4" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_5" BEL
+        "processor/shift_cursor/get_neighbours/M_cursor_position_q_4_6" BEL
         "processor/M_next_cursor_q_0" BEL "processor/M_next_cursor_q_1" BEL
         "processor/M_next_cursor_q_2" BEL "processor/M_next_cursor_q_3" BEL
         "processor/M_next_cursor_q_4" BEL "processor/M_next_cursor_q_5" BEL
@@ -285,31 +292,28 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/M_current_map_q_5" BEL "processor/M_current_map_q_6" BEL
         "processor/M_current_map_q_7" BEL "processor/M_current_map_q_8" BEL
         "processor/M_current_map_q_9" BEL "processor/reset_btn/M_last_q" BEL
-        "processor/reset_ctr/M_ctr_q_33" BEL "processor/reset_ctr/M_ctr_q_32"
-        BEL "processor/reset_ctr/M_ctr_q_31" BEL
-        "processor/reset_ctr/M_ctr_q_30" BEL "processor/reset_ctr/M_ctr_q_29"
-        BEL "processor/reset_ctr/M_ctr_q_28" BEL
-        "processor/reset_ctr/M_ctr_q_27" BEL "processor/reset_ctr/M_ctr_q_26"
-        BEL "processor/reset_ctr/M_ctr_q_25" BEL
-        "processor/reset_ctr/M_ctr_q_24" BEL "processor/reset_ctr/M_ctr_q_23"
-        BEL "processor/reset_ctr/M_ctr_q_22" BEL
-        "processor/reset_ctr/M_ctr_q_21" BEL "processor/reset_ctr/M_ctr_q_20"
-        BEL "processor/reset_ctr/M_ctr_q_19" BEL
-        "processor/reset_ctr/M_ctr_q_18" BEL "processor/reset_ctr/M_ctr_q_17"
-        BEL "processor/reset_ctr/M_ctr_q_16" BEL
-        "processor/reset_ctr/M_ctr_q_15" BEL "processor/reset_ctr/M_ctr_q_14"
-        BEL "processor/reset_ctr/M_ctr_q_13" BEL
-        "processor/reset_ctr/M_ctr_q_12" BEL "processor/reset_ctr/M_ctr_q_11"
-        BEL "processor/reset_ctr/M_ctr_q_10" BEL
-        "processor/reset_ctr/M_ctr_q_9" BEL "processor/reset_ctr/M_ctr_q_8"
-        BEL "processor/reset_ctr/M_ctr_q_7" BEL
-        "processor/reset_ctr/M_ctr_q_6" BEL "processor/reset_ctr/M_ctr_q_5"
-        BEL "processor/reset_ctr/M_ctr_q_4" BEL
-        "processor/reset_ctr/M_ctr_q_3" BEL "processor/reset_ctr/M_ctr_q_2"
-        BEL "processor/reset_ctr/M_ctr_q_1" BEL
-        "processor/reset_ctr/M_ctr_q_0" BEL "processor/M_state_q_FSM_FFd1" BEL
-        "processor/M_state_q_FSM_FFd2" BEL "processor/M_state_q_FSM_FFd3" BEL
-        "processor/M_state_q_FSM_FFd4" BEL "processor/M_create_type_q" BEL
+        "processor/reset_ctr/M_ctr_q_29" BEL "processor/reset_ctr/M_ctr_q_28"
+        BEL "processor/reset_ctr/M_ctr_q_27" BEL
+        "processor/reset_ctr/M_ctr_q_26" BEL "processor/reset_ctr/M_ctr_q_25"
+        BEL "processor/reset_ctr/M_ctr_q_24" BEL
+        "processor/reset_ctr/M_ctr_q_23" BEL "processor/reset_ctr/M_ctr_q_22"
+        BEL "processor/reset_ctr/M_ctr_q_21" BEL
+        "processor/reset_ctr/M_ctr_q_20" BEL "processor/reset_ctr/M_ctr_q_19"
+        BEL "processor/reset_ctr/M_ctr_q_18" BEL
+        "processor/reset_ctr/M_ctr_q_17" BEL "processor/reset_ctr/M_ctr_q_16"
+        BEL "processor/reset_ctr/M_ctr_q_15" BEL
+        "processor/reset_ctr/M_ctr_q_14" BEL "processor/reset_ctr/M_ctr_q_13"
+        BEL "processor/reset_ctr/M_ctr_q_12" BEL
+        "processor/reset_ctr/M_ctr_q_11" BEL "processor/reset_ctr/M_ctr_q_10"
+        BEL "processor/reset_ctr/M_ctr_q_9" BEL
+        "processor/reset_ctr/M_ctr_q_8" BEL "processor/reset_ctr/M_ctr_q_7"
+        BEL "processor/reset_ctr/M_ctr_q_6" BEL
+        "processor/reset_ctr/M_ctr_q_5" BEL "processor/reset_ctr/M_ctr_q_4"
+        BEL "processor/reset_ctr/M_ctr_q_3" BEL
+        "processor/reset_ctr/M_ctr_q_2" BEL "processor/reset_ctr/M_ctr_q_1"
+        BEL "processor/reset_ctr/M_ctr_q_0" BEL "processor/M_state_q_FSM_FFd1"
+        BEL "processor/M_state_q_FSM_FFd2" BEL "processor/M_state_q_FSM_FFd3"
+        BEL "processor/M_state_q_FSM_FFd4" BEL "processor/M_create_type_q" BEL
         "processor/M_current_score_q_0" BEL "processor/M_current_score_q_1"
         BEL "processor/M_current_score_q_2" BEL
         "processor/M_current_score_q_3" BEL "processor/M_current_score_q_4"
@@ -339,8 +343,8 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/right_btn_cond/sync/Mshreg_M_pipe_q_1" BEL
         "processor/toggle_map/M_mask2_q_15" BEL
         "processor/toggle_map/M_mask2_q_20" BEL
-        "processor/toggle_map/M_mask2_q_21" BEL
         "processor/toggle_map/M_mask2_q_16" BEL
+        "processor/toggle_map/M_mask2_q_21" BEL
         "processor/toggle_map/M_mask2_q_17" BEL
         "processor/toggle_map/M_mask2_q_22" BEL
         "processor/toggle_map/M_mask3_q_0" BEL
@@ -441,20 +445,16 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/toggle_map/get_neighbours_x/M_ur_temp_q_23" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_0" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_2" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_3" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_0_1" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_3_1" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_2_1" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_3_2" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_2_2" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_0_2" BEL
+        "processor/toggle_map/get_neighbours/M_cursor_position_q_2_2" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_0_3" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_3_3" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_3_4" BEL
+        "processor/toggle_map/get_neighbours/M_cursor_position_q_0_4" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_2_3" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_2_4" BEL
-        "processor/toggle_map/get_neighbours/M_cursor_position_q_0_4" BEL
         "processor/toggle_map/get_neighbours/M_cursor_position_q_0_5" BEL
+        "processor/toggle_map/get_neighbours/M_cursor_position_q_0_6" BEL
         "processor/toggle_map/M_mask2_x_q_10" BEL
         "processor/toggle_map/M_mask2_x_q_11" BEL
         "processor/toggle_map/M_mask2_x_q_12" BEL
@@ -584,8 +584,8 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/toggle_map/M_mask3_x_q_20" BEL
         "processor/toggle_map/M_mask3_x_q_16" BEL
         "processor/toggle_map/M_mask3_x_q_21" BEL
-        "processor/toggle_map/M_mask3_x_q_22" BEL
         "processor/toggle_map/M_mask3_x_q_17" BEL
+        "processor/toggle_map/M_mask3_x_q_22" BEL
         "processor/toggle_map/M_mask3_x_q_23" BEL
         "processor/toggle_map/M_mask3_x_q_18" BEL
         "processor/toggle_map/M_mask3_x_q_19" BEL
@@ -595,12 +595,12 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "processor/toggle_map/M_mask1_q_12" BEL
         "processor/toggle_map/M_mask1_q_13" BEL
         "processor/toggle_map/M_mask1_q_14" BEL
-        "processor/toggle_map/M_mask1_q_20" BEL
         "processor/toggle_map/M_mask1_q_15" BEL
+        "processor/toggle_map/M_mask1_q_20" BEL
         "processor/toggle_map/M_mask1_q_21" BEL
         "processor/toggle_map/M_mask1_q_16" BEL
-        "processor/toggle_map/M_mask1_q_22" BEL
         "processor/toggle_map/M_mask1_q_17" BEL
+        "processor/toggle_map/M_mask1_q_22" BEL
         "processor/toggle_map/M_mask1_q_23" BEL
         "processor/toggle_map/M_mask1_q_18" BEL
         "processor/toggle_map/M_mask1_q_19" BEL
@@ -740,14 +740,14 @@ TIMEGRP clk = BEL "processor/left_btn/M_last_q" BEL
         "seven_seg_ctr/M_ctr_q_14" BEL "seven_seg_ctr/M_ctr_q_15" BEL
         "seven_seg_ctr/M_ctr_q_16" BEL "seven_seg_ctr/M_ctr_q_17" BEL
         "seven_seg_ctr/M_ctr_q_18" BEL "seven_seg_ctr/M_ctr_q_19" BEL
-        "seven_seg_ctr/M_ctr_q_3_1" BEL "seven_seg_ctr/M_ctr_q_3_2" BEL
-        "seven_seg_ctr/M_ctr_q_1_1" BEL "seven_seg_ctr/M_ctr_q_1_2" BEL
-        "seven_seg_ctr/M_ctr_q_2_1" BEL "seven_seg_ctr/M_ctr_q_2_2" BEL
+        "seven_seg_ctr/M_ctr_q_1_1" BEL "seven_seg_ctr/M_ctr_q_2_1" BEL
+        "seven_seg_ctr/M_ctr_q_2_2" BEL "seven_seg_ctr/M_ctr_q_2_3" BEL
         "seven_seg_ctr/M_ctr_q_0_1" BEL "seven_seg_ctr/M_ctr_q_0_2" BEL
-        "seven_seg_ctr/M_ctr_q_0_3" BEL "seven_seg_ctr/M_ctr_q_2_3" BEL
-        "seven_seg_ctr/M_ctr_q_2_4" BEL "seven_seg_ctr/M_ctr_q_0_4" BEL
+        "seven_seg_ctr/M_ctr_q_0_3" BEL "seven_seg_ctr/M_ctr_q_0_4" BEL
         "seven_seg_ctr/M_ctr_q_0_5" BEL "seven_seg_ctr/M_ctr_q_0_6" BEL
-        "seven_seg_ctr/M_ctr_q_0_7";
+        "seven_seg_ctr/M_ctr_q_0_7" BEL "seven_seg_ctr/M_ctr_q_2_4" BEL
+        "seven_seg_ctr/M_ctr_q_2_5" BEL "seven_seg_ctr/M_ctr_q_1_2" BEL
+        "seven_seg_ctr/M_ctr_q_1_3" BEL "seven_seg_ctr/M_ctr_q_1_4";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

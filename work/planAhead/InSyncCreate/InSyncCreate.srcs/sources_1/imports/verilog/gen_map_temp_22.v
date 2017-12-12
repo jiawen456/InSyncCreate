@@ -15,13 +15,13 @@ module gen_map_temp_22 (
   always @* begin
     out = 25'h0000000;
     if (mask_type == 1'h0 && game_type == 1'h0) begin
-      out = 25'h02e86ea;
+      out = 25'h0000032;
     end else begin
       if (mask_type == 1'h1 && game_type == 1'h0) begin
-        out = 25'h1d61225;
+        out = 25'h009ab20;
       end else begin
         if (mask_type == 1'h0 && game_type == 1'h1) begin
-          out = 25'h0a71786;
+          out = 25'h18c8996;
         end else begin
           if (mask_type == 1'h1 && game_type == 1'h1) begin
             out = 25'h0d2c49e;

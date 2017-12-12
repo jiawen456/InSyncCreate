@@ -310,6 +310,11 @@ module processor_2 (
     case (M_state_q)
       IDLE_state: begin
         out = 25'h0000000;
+        M_create_type_d = 1'h0;
+        M_game_type_d = 1'h0;
+        M_mask_type_d = 1'h0;
+        M_old_map_d = 25'h0000000;
+        M_current_map_d = 25'h0000000;
         if (M_start_btn_out) begin
           M_state_d = CREATE_SELECT_state;
         end

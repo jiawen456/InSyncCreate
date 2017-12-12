@@ -17,8 +17,8 @@
     <src>seven_seg.luc</src>
     <src>adder.luc</src>
     <src>boole.luc</src>
-    <ucf lib="true">mojo.ucf</ucf>
     <ucf>custom.ucf</ucf>
+    <ucf lib="true">mojo.ucf</ucf>
     <component>pn_gen.luc</component>
     <component>reset_conditioner.luc</component>
     <component>pipeline.luc</component>

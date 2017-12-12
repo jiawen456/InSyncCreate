@@ -7,7 +7,7 @@
 /*
    Parameters:
      SIZE = 4
-     DIV = 30
+     DIV = 26
      TOP = 0
      UP = 1
 */
@@ -18,28 +18,28 @@ module counter_18 (
   );
   
   localparam SIZE = 3'h4;
-  localparam DIV = 5'h1e;
+  localparam DIV = 5'h1a;
   localparam TOP = 1'h0;
   localparam UP = 1'h1;
   
   
-  reg [33:0] M_ctr_d, M_ctr_q = 1'h0;
+  reg [29:0] M_ctr_d, M_ctr_q = 1'h0;
   
-  localparam MAX_VALUE = 31'h3fffffff;
+  localparam MAX_VALUE = 27'h3ffffff;
   
   always @* begin
     M_ctr_d = M_ctr_q;
     
-    value = M_ctr_q[30+3-:4];
+    value = M_ctr_q[26+3-:4];
     if (1'h1) begin
       M_ctr_d = M_ctr_q + 1'h1;
-      if (1'h0 && M_ctr_q == 31'h3fffffff) begin
+      if (1'h0 && M_ctr_q == 27'h3ffffff) begin
         M_ctr_d = 1'h0;
       end
     end else begin
       M_ctr_d = M_ctr_q - 1'h1;
       if (1'h0 && M_ctr_q == 1'h0) begin
-        M_ctr_d = 31'h3fffffff;
+        M_ctr_d = 27'h3ffffff;
       end
     end
   end
